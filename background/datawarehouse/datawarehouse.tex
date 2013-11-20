@@ -1,9 +1,43 @@
 \section{Datawarehouse}
-	This section will provide an introductory overview over the datawarehousing dicispine and commonly terminology within. 
+	\noindent
+	This section will provide an introductory overview over the datawarehousing discipline and commonly terminology within. 
 	For the non-database gurus the datawarehousing dicispline is, for all intent and purposes, an organization scheme of
-	data created to enable and facilitate data analyses. 
+	data created to enable and facilitate data analyses without the absolute focus on normalization.
+	%Though not the only key features that differentiate datawarehouses from ordinary databases.
+	\cite{wiki:normalization, wiki:datawarehouse}
+	
+	\bigskip\noindent
+	In the datawarehouse field you will often find buzz words describing commonly known principles from ordinary database
+	usage. Some of the most used include \textit{facts table}, \textit{measures} and \textit{dimensions}.
+	These words describe to a large extends the concepts around designing a datawarehouse. 
+	
+	\bigskip\noindent
+	\textit{Measures} are exactly what the avid reader may intuitively allready know, quantitative data about a business.
+	While \textit{dimensions} can be considered to be meta-data, and works as descriptive attributes. 
+	As an example from the service industry, one can consider a storechain and each stores sales. 
+	In this case one could look at each sale as a fact with \textit{price} as possible \textit{measure},
+	and \textit{store location} as a \textit{dimension}. 
+	The difference between \textit{measures} and \textit{dimensions} become more apparent when considering their usage.
+	One common queryform would be to use an arithmetic function, as \texttt{average} or \texttt{sum}, over a set of
+	\textit{measures} filtered by a value from the \textit{dimensional} set.
+	The \textit{facts table} is the combination of these two, and hence holding all the "`facts"' related to 
 	
 	
-	This is done through the use of multidimensional data models utilizing \textit{facts} which consists of 
-	\textit{measures} and \textit{dimensions}. 
+	\bigskip\noindent
+	In the further discussion of datawarehouses we will look at two prominent organizational schemes utilizes 
+	within the datawarehouse discipline, namely \textit{star schema} and \textit{snowflake schema}. 
+	Both of which have gotten their names by their resemblance to their respective natural phenomena.
+	Common for the both of them is that the \textit{facts table} serves as the main storage table in the scheme, 
+	and is often pictured as the center of the warehouse in graphical illustrations (see figures below). 
+	
+	\bigskip\noindent
+	Since the \textit{star schema} is the simplest, and considered a special case of the \textit{snowflake scheme}
+	we will start off with explaining the basics around this schema. 
+	As mentioned in the paragraph above it often
+	
+	
+	
+	
+	The typical datawarehouse utilizes a extract-transform-load process (ETL), 
+
 	
