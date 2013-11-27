@@ -66,8 +66,11 @@
 		and motivation behind each step.
 		
 		\subsubsection{Extract}
+			The motivation behind the extraction step, and not jumping directly to data transformation, is quite simple. More often then not do datawarehouses depend on data from several diffrent sources. These sources may in many cases organize their data in different way, and even use different formats. 
+			The goal of the extraction process is to gather and convert the data from all sources into a common format appropriate for the next step in the process.
 			
 		\subsubsection{Transform}
+			The motivation behind the transformation step is to transform all the extracted data into the wanted end format. This can include selecting only a subset of the attributes from the data, creating new derived values, and translating coded values into a common format. It should be noted that the previous list is not an exhaustive list, and several other transformation exists and is widely used.
 			
 		\subsubsection{Load}
-			
+			The load process is the process of loading the transformed data into the data warehouse. 
