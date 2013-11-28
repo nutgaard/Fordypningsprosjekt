@@ -5,6 +5,18 @@
 \usepackage{graphicx}
 \usepackage{url}
 \usepackage{float}
+\usepackage{mathtools}
+\usepackage[toc,page]{appendix}
+\usepackage{algorithm}
+\usepackage{algorithmicx}
+\usepackage{algpseudocode}
+
+\newcommand{\argmax}[1]{\underset{#1}{\operatorname{arg}\,\operatorname{max}}\;}
+\newcommand{\argmin}[1]{\underset{#1}{\operatorname{arg}
+\,\operatorname{min}}\;}
+
+%%Force correct display style for math environments
+\everymath{\displaystyle}
 
 \begin{document}
 
@@ -16,6 +28,12 @@
 \pagenumbering{gobble}
 \tableofcontents
 \newpage
+\listoftables
+\newpage
+\listoffigures
+\newpage
+\listofalgorithms
+\newpage
 \setcounter{page}{0}
 \pagenumbering{arabic}
 \include{introduction/introduction}
@@ -25,6 +43,10 @@
 
 \bibliographystyle{plain}
 \bibliography{refs}
+
+\begin{appendices}
+	\include{appendices/algorithms/algorithms}
+\end{appendices}
 
 \end{document}
 
