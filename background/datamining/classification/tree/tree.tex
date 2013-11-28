@@ -9,10 +9,10 @@
 	\bigskip\noindent Classification trees and regression trees are for all intent and purposes very similar, but some key differences are worth noteing. 
 	One of these differences is in the outcome of their predictive model. 
 	Classification trees, as the name may suggest, tries to pinpoint which \textit{class} an instance may belong to. 
-	Whereas with regression trees the outcome of the model is a real number, as the price of a certain item in a store. 
+	Whereas with regression trees the outcome of the model is a \textit{real number}, as the price of a certain item in a store. 
 	
 	\bigskip\noindent
-	An example of decision tree applications can be seen as trying to predict the rating of wine. 
+	An example of decision tree applications can be seen as trying to predict the rating(1-10) of wine. 
 	Given a dataset(Resource: \cite{mining:datasetexample} of preexisting knowledge, which include known attributes to a set of wines and their acoompanying rating.
 	A decision tree may be constructred to generalize this knownledge in order to give a prediction of other wines. 	
 		
@@ -24,5 +24,7 @@
 	
 	\bigskip\noindent
 	One example of a widely used CART algorithms comes from Ross Quinlan, the inventor of the ID3, C4.5 and C5.0 algorithms. \cite{quinlan:id3, quinlan:c45}
-	All of whom use the notion of entropy in order to select the attribute to split for at a certain point in the tree.
+	All of whom use the notion of entropy in order to select the attribute to split for at a certain point in the tree. 
+	They use entropy as a measurement of \textit{information gain} by selection a certain attribute at a given time during the algorithm. 
+	The higher the gain is, the better do the attribute serve as an indicator of an instances' classification. 
 	
