@@ -15,6 +15,26 @@
 \newcommand{\argmin}[1]{\underset{#1}{\operatorname{arg}
 \,\operatorname{min}}\;}
 
+%Figures aliases
+
+\newcommand{\image}[4]{
+	\begin{figure}
+		\centering
+		\includegraphics[width=#2]{#1}
+		\caption{#3}
+		\label{#4}
+	\end{figure}
+}
+\newcommand{\imageHere}[4]{
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=#2]{#1}
+		\caption{#3}
+		\label{#4}
+	\end{figure}
+}
+
+
 %%Force correct display style for math environments
 \everymath{\displaystyle}
 
