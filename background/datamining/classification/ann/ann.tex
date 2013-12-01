@@ -5,10 +5,51 @@
 	
 	\bigskip\noindent
 	First of, a general introduction to ANN is in order. ANNs are computation models that attempt to capture
-	the behaviour and adaptive features of the brain by modeling it. 
+	the behaviour and adaptive features of the brain by modeling it.
 	An ANN therefore consists of a set of neurons, the computational unit, and their synapses, the relationship between neurons (see figure~\ref{fig:ann}).
 	
 	\image{images/ann.png}{0.5\columnwidth}{Structure of artifical neural network}{fig:ann}
+	
+	\bigskip\noindent
+	Neurons is characterized by a set of parameters, including the connection strength, threshold, and an activation function
+	(see figure~\ref{fig:neuron} and equations~\ref{eq:annsummation}-\ref{eq:annsigmoid}). 
+	This is however just the most common and basic implementation of a neural network. 
+	The full discussion and other extended versions of neural networks are beyond the scope of this paper.
+	
+	\begin{figure}
+		\begin{align}
+			net_j &= \sum_{i=1}^n x_i*w_{ij}\label{eq:annsummation}\\
+			o(j) &= \varphi (net_j - \theta_j)\label{eq:annthreshold}\\
+			\varphi(x) &= kx\label{eq:annlinear}\\
+			\varphi(x) &= \begin{cases}
+					1, & \text{if $x > \theta_j$}.\\
+					0, & \text{otherwise.}
+				\end{cases}\label{eq:annbinary}\\
+			\varphi(x) &= \begin{cases}
+					1, & \text{if $x > \theta_j$}.\\
+					-1, & \text{otherwise.}
+				\end{cases}\label{eq:annbipolar}\\
+			\varphi(x) &= \frac{1}{1+e^{-kx}}\label{eq:annsigmoid}
+		\end{align}
+	\end{figure}
+	
+	\image{images/neuron.png}{\columnwidth}{The inner workings of a artifical neuron}{fig:neuron}
+	
+	\bigskip\noindent
+	Training of neural networks consists of three known paradigms, supervised, unsupervised and reinforced. 
+	Where it is supervised learning that is of interest to us in the context of a classification task. 
+	Unsupervised learning could however be used as a clustering technique, 
+	while reinforce learning often is modeled as a Markov decision process and therefore fits the task of sequential decision making. \cite{bioAI}
+	
+	\bigskip\noindent
+	Within the supervised learning paradigm there exists several algorithms. 
+	Most commonly known are perhaps \textit{Widrow-Hoff} rule (delta rule)\cite{widrowhoff}, and the later extended version \textit{backpropagation of error}\cite{rumelhart1986learning}\cite{rumelhart1986parallel}. 
+	The core of the backpropagation algorithm consists of calculating how each of the nodes contribute to the final answers' error, 
+	and adjusting the weights of those nodes according to a preset learningrate. 
+	What this algorithms in a sense does it to preform a gradient descent search of the error function at each neuron.
+	
+	
+	
 	
 	
 	
