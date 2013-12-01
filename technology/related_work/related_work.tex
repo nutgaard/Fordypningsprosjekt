@@ -1,31 +1,91 @@
 \section{Related work}
-The use of data mining in an educational context is called educational data mining \cite{1}. The field of educational data mining includes all sorts of research from course setup in e-learning systems to analysing course similarities. Most papers suggests using decision tree\cite{2} or rule implying algorithms is the best approach. It is not yet proven though, but we need an understandable way to represent the data found and rule based or decision tree algorithms give us exactly this. We should think about using both, as done in\cite{3} and explained further in\cite{4}.
+The use of data mining in an educational context is called educational data mining.~\cite{1}
+The field of educational data mining includes all sorts of research from course setup in e-learning systems to analysing course similarities. 
+Most papers suggests that using decision tree~\cite{2} or rule implying algorithms is the best approach. 
+It is not yet proven, albeit we need an understandable way to represent the data found, and rule based or decision tree algorithms give us exactly this. 
+We should think about using both, as done in~\cite{3} and explained further in.~\cite{4}
 
-A lot of papers have the same main problem as us, predicting dropout prone students\cite{5,7,8,9,11}. This is an important area of research as many universities waste a lot of time, money and effort in educating students which will not complete their degree. These education spots could even be occupied by more focused students. Some of these students drop out because of external events, but some might be able to finish with the right help. It is therefore important to find these students who needs special followups. 
+\bigskip\noindent
+A lot of papers have the same main problem as us, predicting dropout prone students.~\cite{5,7,8,9,11} 
+This is an important area of research as many universities use a lot of time, 
+money and effort in educating students who will not complete their degree. 
+These education spots could even be occupied by more focused students. 
+Some of these students drop out because of external events, but some might be able to finish with the right help. 
+It is therefore important to find these students who needs additional followup. 
 
-All these papers have different focuses on results and datasets but none of them take all the concerns stated in the other into account. Some might discretize attribute values but not take into account the imbalanced datasets and visa versa.
+\bigskip\noindent
+All these papers have different focuses on results and datasets but none of them take all the concerns stated in the other into account. 
+Some might discretize attribute values but not take into account the imbalanced datasets and visa versa.
 
-Data preprocessing
-We need to anonymize the data. Anonymizing data in a collection of data is very important when dealing with sensitive data. Especially if it is for data that is going to be published. A lot of times even if you remove name, id and so on there might be a certain combination of attributes that yield who that individual is. An approach called k-anonymization which maintains the classification structure is proposed, which basically makes it so that at least k instances contains every combination of linked attributes. A top-down approach to refine the data maximizing the trade-off between information and anonymity is presented\cite{14}.
+\subsection{Data preprocessing}
+We need to anonymize the data. 
+Anonymizing data in a collection of data is very important when dealing with sensitive data. 
+Especially if it is for data that is going to be published. 
+A lot of times even if you remove name, id and so on there might be a certain combination of attributes that yield an induviduals identity.
+An approach called \textit{k-anonymization} which maintains the classification structure is proposed, 
+which basically makes it so that at least $k$ instances contains every combination of linked attributes. 
+A top-down approach to refine the data maximizing the trade-off between information and anonymity is presented.~\cite{14}
 
-With our other required pre-processing steps like making data discrete can help the k-anonymizing give better results. We might need to put grades into buckets, for example > C and < C or similar\cite{12}. 
+\bigskip\noindent
+Our other required pre-processing steps like making data discrete, can help the k-anonymizing give better results. 
+We might need to put grades into buckets, for example \textless C and \textgreater C or similar.~\cite{12}
 
-Reducing the number of attributes, in our case the number of courses is also important to avoid overfitting\cite{9}. This is also important because students can take different courses so there will be a lot of empty values. Some of these attributes may then not be very relevant or classify wrongly.
+\bigskip\noindent
+Reducing the number of attributes, in our case the number of courses is also important to avoid overfitting.~\cite{9}
+This is also important because students can take different courses so there will be a lot of empty values. 
+Some of these attributes may then not be very relevant or may cause false results in the classification process.
 
-Another paper looks at the dropout prediction in distance learning. Here they mention that educational data, grades etc is usually imbalanced. This is probably the case for us as well since a lot more students succeed than fail. The main issue is that the error rate is usually high for the smaller class, which in our case is the most important. They propose a local cost sensitive technique as an effective solution. They also discuss existing data mining tools for imbalanced datasets\cite{8,9,12}. The task of taking imbalanced datasets into account is further explained\cite{10}
+\bigskip\noindent
+Another paper looks at the dropout prediction in distance learning. 
+Here they mention that educational data, grades etc is usually imbalanced. 
+This is probably the case for us as well since a lot more students succeed than fail. 
+The main issue is that the error rate is usually high for the smaller class, which in our case is the most important. 
+They propose a local cost sensitive technique as an effective solution. 
+They also discuss existing data mining tools for imbalanced datasets.~\cite{8,9,12} 
+The task of taking imbalanced datasets into account is further explained.~\cite{10}
 
-Educational Decision Support System
-An educational decision support system has been proposed\cite{5} to stop wasting effort, time and money for both educators and students. This focuses on finding the students that will not be able to finish their studies and who should be given a second chance. The DDS focuses on making reasonable decisions in student management. They want to pinpoint poor study performance, they manage a warning list of who will be forced to stop their study. Which students that don’t have the necessary knowledge to make it in the next semester. Students may get one extra change semester to get back in the game. If the wrong students are given a new chance time, money and effort will be lost. With over 1348 undergrad students they got a 97% student classification accuracy.
+\subsection{Educational Decision Support System}
+An educational decision support system has been proposed~\cite{5} to optimize effort, time and money for both educators and students. 
+This focuses on finding the students that will not be able to finish their studies and who should be given a second chance. 
+The DDS focuses on making reasonable decisions in student management. 
+They want to pinpoint poor study performance, they manage a warning list of who will be forced to stop their study. 
+Which students that don't have the necessary knowledge to make it in the next semester. 
+Students may get one extra change semester to get back in the game. 
+If the wrong students are given a new chance time, money and effort will be lost. 
+With over 1348 undergrad students they got a 97\% student classification accuracy.
 
-A second paper also discusses the problem of making correct academic decisions\cite{6}. Different ways of analyzing performance data is discussed and PADSS is developed, a software package. Need to evaluate students in some way. The importance of the data extracted from the grades databases has been shown. 
+\bigskip\noindent
+A second paper also discusses the problem of making correct academic decisions.~\cite{6} 
+Different ways of analyzing performance data is discussed and PADSS is developed, a software package. 
+Need to evaluate students in some way. The importance of the data extracted from the grades databases has been shown. 
 
-One of the papers is very similar to our task in almost every way\cite{7}. They look at students in the electrical engineering program. They classified a successful student as having done all his 1 year courses in 3 years. This is more or less accurate but there are outliers of course. They run some tests on 3 datasets, one with university data only, one with pre-university data only and one combination of both. Only one is relevant to us, the dataset containing university grades only, since we will not have access to earlier data. They then ran different decision tree algorithms on the data with 10 fold cross validation. The only university data used here was grades and number of tries in 74 different courses. With only the highest grades for the 37 available courses and how many attempts were taken pr course The algorithms had an accuracy between 75 and 80% on dropout which is very promising for us.
+\bigskip\noindent
+One of the papers is very similar to our task in almost every way.~\cite{7} 
+They look at students in the electrical engineering program. 
+They classified a successful student as having done all his 1 year courses in 3 years. 
+This is more or less accurate but there are outliers of course. 
+They run some tests on 3 datasets, one with university data only, one with pre-university data only and one combination of both. 
+Only one is relevant to us, the dataset containing university grades only, since we will not have access to earlier data. 
+They then ran different decision tree algorithms on the data with 10 fold cross validation. 
+The only university data used here was grades and number of tries in 74 different courses. 
+With only the highest grades for the 37 available courses and how many attempts were taken pr course.
+The algorithms had an accuracy between 75 and 80\% on dropout which is very promising for us.
 
-Some other, often more statistical papers talk about the importance of social data. This can be in the form of data from student conversations with counselors\cite{11}. It is mentioned that the results of the case study presented in [2] indicate that Bayesian networks and neural networks are consistently outperformed by decision tree algorithms on relatively small educational datasets.
+\bigskip\noindent
+Some other, often more statistical papers talk about the importance of social data. 
+This can be in the form of data from student conversations with counselors.~\cite{11} 
+It is mentioned that the results of the case study presented in~\cite{2} indicate that Bayesian networks and neural networks are consistently outperformed by decision tree algorithms on relatively small educational datasets.
 
-A data mining tool has been developed for Moodle(Moodle is a Learning Management System similar to its-learning)\cite{12}. They use this mining tool to compare different data mining techniques when classifying students based on their Moodle usage. This might be interesting but not many lecturers or students use its-learning efficiently. 
+\bigskip\noindent
+A data mining tool has been developed for Moodle(Moodle is a Learning Management System similar to its-learning).~\cite{12} 
+They use this mining tool to compare different data mining techniques when classifying students based on their Moodle usage. 
+This might be interesting but not many lecturers or students use its-learning efficiently. 
 
-An interesting paper writes about identifying cellular phone failures and has some positive and negative things to say about some different methods\cite{13}. They state that the task is not to predict any failure but to identify possible causes that resulted in failures. This might be applied to students as well. They talk about class association rules.
+\bigskip\noindent
+An interesting paper writes about identifying cellular phone failures and has some positive and negative things to say about some different methods.~\cite{13} 
+They state that the task is not to predict any failure but to identify possible causes that resulted in failures. 
+This might be applied to students as well. They talk about class association rules.
 
+\bigskip\noindent
 Weka is the main tool used, easy to integrate and has all the operations we will ever need.
 
