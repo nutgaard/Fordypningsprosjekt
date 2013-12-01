@@ -24,13 +24,16 @@
 %Do however but the command at the wanted position within the text, 
 %if we at a later stage want to fix the positioning of all images it could be done by rewriting this alias.
 \newcommand{\image}[4]{
-	%\imageHere{#1}{#2}{#3}{#4}
-	\begin{figure}[ht]
-		\centering
-		\insertImage{#1}{#2}
-		\caption{#3}
-		\label{#4}
-	\end{figure}
+	\ifthenelse{\equal{true}{true}}{%true - true => latex fixes positioning, mismatch => forced positioning by float
+		\begin{figure}[ht]
+			\centering
+			\insertImage{#1}{#2}
+			\caption{#3}
+			\label{#4}
+		\end{figure}
+	}{
+		\imageHere{#1}{#2}{#3}{#4}
+	}	
 }
 \newcommand{\imageHere}[4]{
 	\begin{figure}[H]
