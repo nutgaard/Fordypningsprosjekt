@@ -36,12 +36,7 @@
 	The \textit{star schema} figure has the \textit{fact table} at its center, with the \textit{dimensional tables} at its peripheral. 
 	These dimensional table are not normalized, and may contain duplicate entries, e.g. the \textit{date} of the entry.
 		
-	\begin{figure}[H]%
-		\centering
-		\includegraphics[width=\columnwidth]{UML/StarSchemaConcept.png}%
-		\caption{Star schema concept}%
-		\label{fig:starSchemeConcept}%
-	\end{figure}
+	\image{UML/StarSchemaConcept.png}{\columnwidth}{Star schema concept}{fig:starSchemeConcept}
 	
 	\bigskip\noindent
 	The \textit{snowflake schema} show the same general structure as the \textit{star schema}, 
@@ -52,12 +47,7 @@
 	it is however more normal to augment the date with data consider with quarter in the year it belongs to. 
 	Hence making it easy to aggregate data over each quarter instead of aggregating over several month.
 	
-	\begin{figure}[H]%
-		\centering
-		\includegraphics[width=\columnwidth]{UML/SnowflakeSchemaConcept.png}%
-		\caption{Star schema concept}%
-		\label{fig:snowflakeSchemeConcept}%
-	\end{figure}	
+	\image{UML/SnowflakeSchemaConcept.png}{\columnwidth}{Snowflake schema concept}{fig:snowflakeSchemeConcept}
 	
 	\subsection{ETL workflow}
 		The typical workflow when working with datawarehouses is \textit{extract, transform, load} or ETL. 

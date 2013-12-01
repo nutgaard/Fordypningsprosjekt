@@ -13,20 +13,16 @@
 	
 	\bigskip\noindent
 	An example of decision tree applications can be seen as trying to predict the rating(1-10) of wine. 
-	Given a dataset(Resource: \cite{mining:datasetexample} of preexisting knowledge, which include known attributes to a set of wines and their acoompanying rating.
+	Given a dataset(Resource: \cite{mining:datasetexample}) of preexisting knowledge, which include known attributes to a set of wines and their acoompanying rating.
 	A decision tree may be constructred to generalize this knownledge in order to give a prediction of other wines. 	
 		
-	\begin{figure}[H]%
-		\includegraphics[width=\columnwidth]{images/TrivialDecisionTree.png}%
-		\caption{Example classification tree from TDT4171. }%
-		\label{fig:decisiontree}%
-	\end{figure}
+	\image{images/TrivialDecisionTree.png}{\columnwidth}{Example classification tree from TDT4171}{fig:decisiontree}
 	
 	\bigskip\noindent
-	One example of a widely used CART algorithms comes from Ross Quinlan, the inventor of the ID3, C4.5 and C5.0 algorithms. \cite{quinlan:id3, quinlan:c45}
+	One example of a widely used CART algorithm comes from Ross Quinlan, the inventor of the ID3, C4.5 and C5.0 algorithms. \cite{quinlan:id3, quinlan:c45}
 	All of whom use the notion of entropy in order to select the attribute to split for at a certain point in the tree. 
-	They use entropy(equation~\ref{eq:entropy}) as a measurement of information gain(equation~\ref{eq:gain}) by selection a certain attribute at a given time during the algorithm. 
-	The higher the gain is, the better do the attribute serve as an indicator of an instances' classification. 
+	They all use entropy(equation~\ref{eq:entropy}) as a measurement of information gain(equation~\ref{eq:gain}) by selecting a certain attribute at a given time during the algorithm. 
+	The higher the gain is, the better do the attribute serve as an indicator of an instances' classification. (Algorithm~\ref{alg:id3})
 	\begin{figure}[H]
 		\begin{align}
 			H(S) &= -\sum_{x \in X}p(x)log_2p(x)\label{eq:entropy}\\
