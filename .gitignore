@@ -1,3 +1,6 @@
+*.fls
+*.tmp
+target/
 *.acn
 *.acr
 *.alg

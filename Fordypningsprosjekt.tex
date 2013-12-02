@@ -3,11 +3,11 @@
 \usepackage[latin1]{inputenc}
 \usepackage[Glenn]{fncychap}
 \usepackage{graphicx}
-\usepackage{url}
+\usepackage[hidelinks]{hyperref}
 \usepackage{float}
 \usepackage{mathtools}
 \usepackage[toc,page]{appendix}
-\usepackage{cite}
+%\usepackage{cite}
 \usepackage{algorithm}
 \usepackage{algorithmicx}
 \usepackage{algpseudocode}
@@ -24,7 +24,7 @@
 %Do however but the command at the wanted position within the text, 
 %if we at a later stage want to fix the positioning of all images it could be done by rewriting this alias.
 \newcommand{\image}[4]{
-	\ifthenelse{\equal{true}{true}}{%true - true => latex fixes positioning, mismatch => forced positioning by float
+	\ifthenelse{\equal{false}{true}}{%true - true => latex fixes positioning, mismatch => forced positioning by float
 		\begin{figure}[ht]
 			\centering
 			\insertImage{#1}{#2}
@@ -79,6 +79,7 @@
 \include{technology/technology}
 \include{system_overview/system_overview}
 
+\clearpage
 \bibliographystyle{plain}
 \bibliography{refs}
 

@@ -1,2 +1,45 @@
-\subsubsection{Bayesian Classifiers}
+\subsubsection{Bayesian Network Classifiers}
+	The bayesian classifier are based probabilistic classifiers which uses Bayes theorem as a basis(Equation~\ref{eq:bayes}). 
+	Bayesian networks, often referred to as belief networks in AI, 
+	is a representation of conditional dependencies using a directed acyclic graph(Figure~\ref{fig:bayesiannetwork}).
+	This representation is choosen over full joint probability distribution table(FJPDT) due to its simplicity in designing and that it requires much less probabilistic values. 
+	
+	\begin{figure}[H]
+		\begin{align}
+			P(A|B) &= \frac{P(B|A)P(A)}{P(B)}\label{eq:bayes}
+		\end{align}
+	\end{figure}
+	
+	\image{images/bayesiannetwork.jpg}{\columnwidth}{Example of bayesian network}{fig:bayesiannetwork}
+	
+	\bigskip\noindent
+	As an example, given an network of $n$ boolean variables, each with $k$ parent nodes. Using a FJPDT it would require $2^n$ probabilities, 
+	whereas a bayesian network would make due with $n*2^k$. 
+	Since $k$, in most circumstances, are very small compared to $n$ this would result in just a fraction of the probabilites.
+	And since every probability from the FJPDT can be calculated from a bayesian network, no data is lost. 
+	
+	\bigskip\noindent
+	The final nail in coffin for the FJPDT comes from the difficulty of estimating the probabilites. 
+	E.g The probability $P(Y|\vec{X})$ where $\vec{X}$ may contain several attributes that do not affect the probability. 
+	This is often cumbersome and difficult is the table is to be populated by a human domain expert.
+	
+	\bigskip\noindent
+	A special case of bayesian network is the \textit{naive Bayes}, which is based upon a naive independence assumption between attributes. Thus making the somewhat complicated calculations seen in bayesian network become much simpler.
+	
+	\begin{figure}[H]
+		\begin{align}
+			P(Y, X_1, \ldots ,X_n) &= P(Y)P(X_1, \ldots ,X_n|Y)\nonumber\\
+					&= P(Y)P(X_1|Y)P(X_2, \ldots ,X_n|C,X_1)\nonumber\\
+					&= P(Y)P(X_1|Y)P(X_2, \ldots ,X_n|C,X_1)\ldots P(X_n|C,X_1,\ldots,X_{n-1})\nonumber
+			\intertext{the naive conditional independence assumptions}
+		  P(X_i|C,X_j) &= P(X_i|C)\nonumber\\
+			\intertext{for all $i \neq j$, thus giving}
+			P(Y, X_1, \ldots ,X_n) &= \frac{1}{Z}P(Y)\prod_{i=1}^n P(X_i|C)
+		\end{align}
+	\end{figure}
+	
+	\image{images/naivebayes.png}{\columnwidth}{Naive bayes structure}{fig:naivebayes}
+	
+	
+	
 	
