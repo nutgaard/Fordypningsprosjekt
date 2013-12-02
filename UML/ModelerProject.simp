@@ -326,6 +326,9 @@
             </text>
           </documentation>
         </attribute>
+        <attribute id="a7760c4b8c03d413a9ed955241349ebe0158" name="sex" type="boolean" type-id="boolean" visibility="private" abstract="false" virtual="false">
+          <stereotypes />
+        </attribute>
       </attributes>
       <operations />
       <template-parameters>
@@ -476,7 +479,7 @@
             <class />
           </item>
           <item id="di844793515295069694" iid="95f7a98b01f74152a1446e2a65e3a87f" show-cid="false" show-parent-name="false" show-stereotypes="true" show-tagged-values="false" creation-date="11/20/2013 21:42:37" order-index="0" type="entity">
-            <layout ax="473" ay="435" awidth="234" aheight="56" x="474" y="435" width="234" height="56" angle="0" />
+            <layout ax="473" ay="435" awidth="234" aheight="78" x="474" y="435" width="234" height="78" angle="0" />
             <class />
           </item>
           <item id="di160117194687913710" iid="727b106587df4526aca3841a6e107469" show-cid="false" show-parent-name="false" show-stereotypes="true" show-tagged-values="false" creation-date="11/20/2013 21:42:37" order-index="0" type="relation">
@@ -727,7 +730,7 @@
         </meta>
         <tagged-values />
         <abstract-items>
-          <item id="ddip798350532832281994_406791519879509310" cid="ENT001" type="erd-entity" name="Fact table" style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="11/21/2013 11:17:43">
+          <item id="ddip798350532832281994_406791519879509310" cid="ENT001" type="erd-entity" name="Fact table" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="11/21/2013 11:17:43">
             <stereotypes />
             <tagged-values />
             <associated-diagrams />
@@ -735,7 +738,7 @@
             <style class="default" />
             <attributes />
           </item>
-          <item id="ddip798350532832281994_856524148429290905" cid="ENT002" type="erd-entity" name="Dimension" style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="11/21/2013 11:17:51">
+          <item id="ddip798350532832281994_856524148429290905" cid="ENT002" type="erd-entity" name="Dimension" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="11/21/2013 11:17:51">
             <stereotypes />
             <tagged-values />
             <associated-diagrams />
@@ -743,7 +746,7 @@
             <style class="default" />
             <attributes />
           </item>
-          <item id="ddip798350532832281994_134718682302469058" cid="ENT002" type="erd-entity" name="Dimension" style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="11/21/2013 11:17:51">
+          <item id="ddip798350532832281994_134718682302469058" cid="ENT002" type="erd-entity" name="Dimension" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="11/21/2013 11:17:51">
             <stereotypes />
             <tagged-values />
             <associated-diagrams />
@@ -751,7 +754,7 @@
             <style class="default" />
             <attributes />
           </item>
-          <item id="ddip798350532832281994_938403341990991591" cid="ENT002" type="erd-entity" name="Dimension" style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="11/21/2013 11:17:51">
+          <item id="ddip798350532832281994_938403341990991591" cid="ENT002" type="erd-entity" name="Dimension" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="11/21/2013 11:17:51">
             <stereotypes />
             <tagged-values />
             <associated-diagrams />
@@ -759,7 +762,7 @@
             <style class="default" />
             <attributes />
           </item>
-          <item id="ddip798350532832281994_967677590850259940" cid="ENT002" type="erd-entity" name="Dimension" style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="11/21/2013 11:17:51">
+          <item id="ddip798350532832281994_967677590850259940" cid="ENT002" type="erd-entity" name="Dimension" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="11/21/2013 11:17:51">
             <stereotypes />
             <tagged-values />
             <associated-diagrams />
@@ -767,7 +770,7 @@
             <style class="default" />
             <attributes />
           </item>
-          <item id="ddip798350532832281994_779008661250702197" cid="REL001" type="erd-relationship" name="" style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="11/21/2013 11:20:28">
+          <item id="ddip798350532832281994_779008661250702197" cid="REL001" type="erd-relationship" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="11/21/2013 11:20:28">
             <stereotypes />
             <tagged-values />
             <associated-diagrams />
@@ -775,7 +778,7 @@
             <style class="default" />
             <erd-relation type="Association" multiplicity-from="1" multiplicity-to="1..*" from-attribute="" to-attribute="" />
           </item>
-          <item id="ddip798350532832281994_796395806277761823" cid="REL002" type="erd-relationship" name="" style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="11/21/2013 11:20:32">
+          <item id="ddip798350532832281994_796395806277761823" cid="REL002" type="erd-relationship" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="11/21/2013 11:20:32">
             <stereotypes />
             <tagged-values />
             <associated-diagrams />
@@ -783,7 +786,7 @@
             <style class="default" />
             <erd-relation type="Association" multiplicity-from="1" multiplicity-to="1..*" from-attribute="" to-attribute="" />
           </item>
-          <item id="ddip798350532832281994_641088461626494199" cid="REL003" type="erd-relationship" name="" style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="11/21/2013 11:20:35">
+          <item id="ddip798350532832281994_641088461626494199" cid="REL003" type="erd-relationship" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="11/21/2013 11:20:35">
             <stereotypes />
             <tagged-values />
             <associated-diagrams />
@@ -791,7 +794,7 @@
             <style class="default" />
             <erd-relation type="Association" multiplicity-from="1" multiplicity-to="1..*" from-attribute="" to-attribute="" />
           </item>
-          <item id="ddip798350532832281994_411063993983437934" cid="REL004" type="erd-relationship" name="" style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="11/21/2013 11:20:38">
+          <item id="ddip798350532832281994_411063993983437934" cid="REL004" type="erd-relationship" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="11/21/2013 11:20:38">
             <stereotypes />
             <tagged-values />
             <associated-diagrams />
@@ -877,7 +880,7 @@
         </meta>
         <tagged-values />
         <abstract-items>
-          <item id="ddip798350532832281994_406791519879509310" cid="ENT001" type="erd-entity" name="Fact table" style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="11/21/2013 11:17:43">
+          <item id="ddip798350532832281994_406791519879509310" cid="ENT001" type="erd-entity" name="Fact table" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="11/21/2013 11:17:43">
             <stereotypes />
             <tagged-values />
             <associated-diagrams />
@@ -885,7 +888,7 @@
             <style class="default" />
             <attributes />
           </item>
-          <item id="ddip798350532832281994_856524148429290905" cid="ENT002" type="erd-entity" name="Dimension" style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="11/21/2013 11:17:51">
+          <item id="ddip798350532832281994_856524148429290905" cid="ENT002" type="erd-entity" name="Dimension" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="11/21/2013 11:17:51">
             <stereotypes />
             <tagged-values />
             <associated-diagrams />
@@ -893,7 +896,7 @@
             <style class="default" />
             <attributes />
           </item>
-          <item id="ddip798350532832281994_134718682302469058" cid="ENT002" type="erd-entity" name="Dimension" style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="11/21/2013 11:17:51">
+          <item id="ddip798350532832281994_134718682302469058" cid="ENT002" type="erd-entity" name="Dimension" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="11/21/2013 11:17:51">
             <stereotypes />
             <tagged-values />
             <associated-diagrams />
@@ -901,7 +904,7 @@
             <style class="default" />
             <attributes />
           </item>
-          <item id="ddip798350532832281994_938403341990991591" cid="ENT002" type="erd-entity" name="Dimension" style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="11/21/2013 11:17:51">
+          <item id="ddip798350532832281994_938403341990991591" cid="ENT002" type="erd-entity" name="Dimension" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="11/21/2013 11:17:51">
             <stereotypes />
             <tagged-values />
             <associated-diagrams />
@@ -909,7 +912,7 @@
             <style class="default" />
             <attributes />
           </item>
-          <item id="ddip798350532832281994_967677590850259940" cid="ENT002" type="erd-entity" name="Dimension" style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="11/21/2013 11:17:51">
+          <item id="ddip798350532832281994_967677590850259940" cid="ENT002" type="erd-entity" name="Dimension" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="11/21/2013 11:17:51">
             <stereotypes />
             <tagged-values />
             <associated-diagrams />
@@ -917,7 +920,7 @@
             <style class="default" />
             <attributes />
           </item>
-          <item id="ddip798350532832281994_779008661250702197" cid="REL001" type="erd-relationship" name="" style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="11/21/2013 11:20:28">
+          <item id="ddip798350532832281994_779008661250702197" cid="REL001" type="erd-relationship" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="11/21/2013 11:20:28">
             <stereotypes />
             <tagged-values />
             <associated-diagrams />
@@ -925,7 +928,7 @@
             <style class="default" />
             <erd-relation type="Association" multiplicity-from="1" multiplicity-to="1..*" from-attribute="" to-attribute="" />
           </item>
-          <item id="ddip798350532832281994_796395806277761823" cid="REL002" type="erd-relationship" name="" style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="11/21/2013 11:20:32">
+          <item id="ddip798350532832281994_796395806277761823" cid="REL002" type="erd-relationship" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="11/21/2013 11:20:32">
             <stereotypes />
             <tagged-values />
             <associated-diagrams />
@@ -933,7 +936,7 @@
             <style class="default" />
             <erd-relation type="Association" multiplicity-from="1" multiplicity-to="1..*" from-attribute="" to-attribute="" />
           </item>
-          <item id="ddip798350532832281994_641088461626494199" cid="REL003" type="erd-relationship" name="" style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="11/21/2013 11:20:35">
+          <item id="ddip798350532832281994_641088461626494199" cid="REL003" type="erd-relationship" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="11/21/2013 11:20:35">
             <stereotypes />
             <tagged-values />
             <associated-diagrams />
@@ -941,7 +944,7 @@
             <style class="default" />
             <erd-relation type="Association" multiplicity-from="1" multiplicity-to="1..*" from-attribute="" to-attribute="" />
           </item>
-          <item id="ddip798350532832281994_411063993983437934" cid="REL004" type="erd-relationship" name="" style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="11/21/2013 11:20:38">
+          <item id="ddip798350532832281994_411063993983437934" cid="REL004" type="erd-relationship" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="11/21/2013 11:20:38">
             <stereotypes />
             <tagged-values />
             <associated-diagrams />
@@ -949,7 +952,7 @@
             <style class="default" />
             <erd-relation type="Association" multiplicity-from="1" multiplicity-to="1..*" from-attribute="" to-attribute="" />
           </item>
-          <item id="ddip120339369787889239_122993161711372121" cid="REL005" type="erd-relationship" name="" style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="11/21/2013 11:34:24">
+          <item id="ddip120339369787889239_122993161711372121" cid="REL005" type="erd-relationship" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="11/21/2013 11:34:24">
             <stereotypes />
             <tagged-values />
             <associated-diagrams />
@@ -957,7 +960,7 @@
             <style class="default" />
             <erd-relation type="Association" multiplicity-from="1" multiplicity-to="1..*" from-attribute="" to-attribute="" />
           </item>
-          <item id="ddip120339369787889239_991526671195163116" cid="ENT002" type="erd-entity" name="  " style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="11/21/2013 11:17:51">
+          <item id="ddip120339369787889239_991526671195163116" cid="ENT002" type="erd-entity" name="  " style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="11/21/2013 11:17:51">
             <stereotypes />
             <tagged-values />
             <associated-diagrams />
@@ -965,7 +968,7 @@
             <style class="default" />
             <attributes />
           </item>
-          <item id="ddip120339369787889239_619391710766038989" cid="ENT002" type="erd-entity" name="  " style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="11/21/2013 11:17:51">
+          <item id="ddip120339369787889239_619391710766038989" cid="ENT002" type="erd-entity" name="  " style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="11/21/2013 11:17:51">
             <stereotypes />
             <tagged-values />
             <associated-diagrams />
@@ -973,7 +976,7 @@
             <style class="default" />
             <attributes />
           </item>
-          <item id="ddip120339369787889239_663524836865568241" cid="ENT002" type="erd-entity" name="  " style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="11/21/2013 11:17:51">
+          <item id="ddip120339369787889239_663524836865568241" cid="ENT002" type="erd-entity" name="  " style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="11/21/2013 11:17:51">
             <stereotypes />
             <tagged-values />
             <associated-diagrams />
@@ -981,7 +984,7 @@
             <style class="default" />
             <attributes />
           </item>
-          <item id="ddip120339369787889239_961808914614641308" cid="ENT002" type="erd-entity" name="  " style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="11/21/2013 11:17:51">
+          <item id="ddip120339369787889239_961808914614641308" cid="ENT002" type="erd-entity" name="  " style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="11/21/2013 11:17:51">
             <stereotypes />
             <tagged-values />
             <associated-diagrams />
@@ -989,7 +992,7 @@
             <style class="default" />
             <attributes />
           </item>
-          <item id="ddip120339369787889239_406617075190763030" cid="REL009" type="erd-relationship" name="" style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="11/21/2013 11:35:20">
+          <item id="ddip120339369787889239_406617075190763030" cid="REL009" type="erd-relationship" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="11/21/2013 11:35:20">
             <stereotypes />
             <tagged-values />
             <associated-diagrams />
@@ -997,7 +1000,7 @@
             <style class="default" />
             <erd-relation type="Association" multiplicity-from="1" multiplicity-to="1..*" from-attribute="" to-attribute="" />
           </item>
-          <item id="ddip120339369787889239_709319989440158637" cid="ENT002" type="erd-entity" name="  " style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="11/21/2013 11:17:51">
+          <item id="ddip120339369787889239_709319989440158637" cid="ENT002" type="erd-entity" name="  " style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="11/21/2013 11:17:51">
             <stereotypes />
             <tagged-values />
             <associated-diagrams />
@@ -1005,7 +1008,7 @@
             <style class="default" />
             <attributes />
           </item>
-          <item id="ddip120339369787889239_630055769225882730" cid="REL006" type="erd-relationship" name="" style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="11/21/2013 11:34:28">
+          <item id="ddip120339369787889239_630055769225882730" cid="REL006" type="erd-relationship" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="11/21/2013 11:34:28">
             <stereotypes />
             <tagged-values />
             <associated-diagrams />
@@ -1013,7 +1016,7 @@
             <style class="default" />
             <erd-relation type="Association" multiplicity-from="1" multiplicity-to="1..*" from-attribute="" to-attribute="" />
           </item>
-          <item id="ddip120339369787889239_721181790523040727" cid="REL007" type="erd-relationship" name="" style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="11/21/2013 11:34:52">
+          <item id="ddip120339369787889239_721181790523040727" cid="REL007" type="erd-relationship" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="11/21/2013 11:34:52">
             <stereotypes />
             <tagged-values />
             <associated-diagrams />
@@ -1021,7 +1024,7 @@
             <style class="default" />
             <erd-relation type="Association" multiplicity-from="1" multiplicity-to="1..*" from-attribute="" to-attribute="" />
           </item>
-          <item id="ddip120339369787889239_688492257534466740" cid="REL008" type="erd-relationship" name="" style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="11/21/2013 11:34:56">
+          <item id="ddip120339369787889239_688492257534466740" cid="REL008" type="erd-relationship" name="" style-class="default" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="11/21/2013 11:34:56">
             <stereotypes />
             <tagged-values />
             <associated-diagrams />
