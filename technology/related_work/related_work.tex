@@ -1,9 +1,26 @@
 \section{Related work}
-The use of data mining in an educational context is called educational data mining.~\cite{1}
-The field of educational data mining includes all sorts of research from course setup in e-learning systems to analysing course similarities. 
-Most papers suggests that using decision tree~\cite{2} or rule implying algorithms is the best approach. 
+Explaining and predicting academic performance has been researched a lot in other fields than computer science. Many studies look at the psychological aspect of students that choose to quit studying or are preforming under the standards. Not many of these existing techniques take all the data available on students into account. Data mining in this context can therefore be very helpful. Not only by organizing the data into an easier analyzable way for counselors, but also by trying to classify and analyze both students and education in general. Recently a lot of research has gone into this and the term Educational Data Mining~\cite{1} was born.
+
+\bigskip\noindent
+Educational Data Mining includes everything about data mining in an educational context.
+We are especially interested in what classification algorithms have to offer. 
+Classification in EDM can be used in many ways, such as:
+providing feedback for supporting instructors,
+make recommendations for students,
+predict student performance,
+detect undesirable student behaviours,
+constructing course content and custom tutoring,
+analyze social networks and much more.
+It is still not clear which methods are most effective in this context, but most papers so far agree that decision trees~\cite{2,12} or rule implying algorithms are the best approach.
 It is not yet proven, albeit we need an understandable way to represent the data found, and rule based or decision tree algorithms give us exactly this. 
-We should think about using both, as done in~\cite{3} and explained further in.~\cite{4}
+
+\bigskip\noindent
+An interesting paper writes about identifying cellular phone failures~\cite{3}.
+Their task is not to predict any failure but to identify possible causes that resulted in failures.  
+They have used a technique called Class Association Rules which only mines rules with classes on the right side of the implication. 
+Many different data mining techniques have been discussed and why none of them worked in a real data situation. 
+A lot of the points they bring up here applies to our task as well.
+Class Association Rule mining is further explained in~\cite{4}.
 
 \bigskip\noindent
 A lot of papers have the same main problem as us, predicting dropout prone students.~\cite{5,7,8,9,11} 
@@ -11,14 +28,30 @@ This is an important area of research as many universities use a lot of time,
 money and effort in educating students who will not complete their degree. 
 These education spots could even be occupied by more focused students. 
 Some of these students drop out because of external events, but some might be able to finish with the right help. 
-It is therefore important to find these students who needs additional followup. 
+It is therefore important to find these students to either help them or drop them from the study. 
 
 \bigskip\noindent
-All these papers have different focuses on results and datasets but none of them take all the concerns stated in the other into account. 
-Some might discretize attribute values but not take into account the imbalanced datasets and visa versa.
+One of the papers is very similar to our task in almost every way~\cite{7}.
+They look at students in an electrical engineering program. 
+They classified a successful student as having done all his 1 year courses in 3 years. 
+This is more or less accurate but there are outliers of course. 
+They run some tests on 3 datasets, one with university data only, one with pre-university data only and one combination of both. 
+Only one is relevant to us, the dataset containing university grades only, since we will not have access to earlier data. 
+They then ran different decision tree algorithms on the data with 10 fold cross validation. 
+The only university data used here was grades and number of tries in 74 different courses. 
+With only the highest grades for the 37 available courses and how many attempts were taken pr course.
+The algorithms had an accuracy between 75 and 80\% on dropout which is very promising for us.
+
+\bigskip\noindent
+Some other, often more statistical papers talk about the importance of social data. 
+This can be in the form of data from student conversations with counselors.~\cite{11} 
+
+\bigskip\noindent
+A data mining tool has been developed for Moodle(Moodle is a Learning Management System similar to its-learning).~\cite{12} 
+They use this mining tool to compare different data mining techniques when classifying students based on their Moodle usage. 
+This might be interesting but not many lecturers or students use its-learning efficiently. 
 
 \subsection{Data preprocessing}
-We need to anonymize the data. 
 Anonymizing data in a collection of data is very important when dealing with sensitive data. 
 Especially if it is for data that is going to be published. 
 A lot of times even if you remove name, id and so on there might be a certain combination of attributes that yield an induviduals identity.
@@ -27,22 +60,48 @@ which basically makes it so that at least $k$ instances contains every combinati
 A top-down approach to refine the data maximizing the trade-off between information and anonymity is presented.~\cite{14}
 
 \bigskip\noindent
-Our other required pre-processing steps like making data discrete, can help the k-anonymizing give better results. 
-We might need to put grades into buckets, for example \textless C and \textgreater C or similar.~\cite{12}
+We might need to discretize our data.
+We can put grades into buckets, for example \textless C, C and \textgreater C into buckets called FAIL, PASS and GOOD.~\cite{12}
 
 \bigskip\noindent
-Reducing the number of attributes, in our case the number of courses is also important to avoid overfitting.~\cite{9}
-This is also important because students can take different courses so there will be a lot of empty values. 
-Some of these attributes may then not be very relevant or may cause false results in the classification process.
+Reducing the number of attributes, in our case the number of courses is also important for understanding and space in the database.
+It has been shown that not only can classification properties of the data be preserved, but the accuracy can increase for certain algorithms as well~\cite{9}.
+This is also important because students can take different courses so some of these attributes may not be very relevant. 
+In the worst case it might even cause false results or conclusions in the classification process.
 
 \bigskip\noindent
-Another paper looks at the dropout prediction in distance learning. 
-Here they mention that educational data, grades etc is usually imbalanced. 
-This is probably the case for us as well since a lot more students succeed than fail. 
-The main issue is that the error rate is usually high for the smaller class, which in our case is the most important. 
-They propose a local cost sensitive technique as an effective solution. 
-They also discuss existing data mining tools for imbalanced datasets.~\cite{8,9,12} 
-The task of taking imbalanced datasets into account is further explained.~\cite{10}
+One of the biggest issues in many papers is that the dataset is not balanced. 
+Data is imbalanced when one class is represented by a significantly larger amount of instances than another~\cite{10}. 
+An imbalanced boolean dataset might look like this: class 1 is represented by 10 instances and class 0 is represented by 200 instances. 
+Learning a classifier from such datasets poses a problem. 
+A class that is poorly represented will yield bad accuracy for this class in the classifier, 
+even though the accuracy for the dataset as a whole might be high. 
+This is an important issue in our discussion as our dataset is imbalanced and the poorly represented class is the most important one, 
+we want to find students which will fail.
+
+\bigskip\noindent
+As mentioned the accuracy might be high overall but not for the spesiffic classes we want.
+A better measure for classifiers built on imbalanced datasets is the geometric mean. 
+This is usually used in these circumstances~\cite{12}. 
+
+\bigskip\noindent
+Balancing out the dataset can be done in multiple ways. 
+Random over-sampling copies random instances of an underrepresented class until the classes are represented by an equal amount of instances~\cite{12}. 
+Synthetic Minority Over-sampling Technique(SMOTE) introduces new minority instances synthetically from the nearest neighbour of equal class~\cite{9}. 
+Cost-sensitive classification lets you put weights on the classes so the classifier is built to maximize the accuracy based on these weights~\cite{9}. 
+We can specify that fail students are 5 times as important to classify correctly then pass students. 
+When changing the dataset for classification it is important to test on the original dataset if you are testing on and building from the same dataset.
+
+\bigskip\noindent
+The task of mining on imbalanced datasets is further explained in~\cite{10}.
+
+\bigskip\noindent
+They also discuss existing data mining tools for imbalanced datasets in~\cite{8}.
+
+
+\bigskip\noindent
+All these papers have different datasets and focuses on results but none of them take all the concerns stated in the other into account. 
+Some might discretize attribute values but not take into account the imbalanced datasets and visa versa.
 
 \subsection{Educational Decision Support System}
 An educational decision support system has been proposed~\cite{5} to optimize effort, time and money for both educators and students. 
@@ -58,33 +117,6 @@ With over 1348 undergrad students they got a 97\% student classification accurac
 A second paper also discusses the problem of making correct academic decisions.~\cite{6} 
 Different ways of analyzing performance data is discussed and PADSS is developed, a software package. 
 Need to evaluate students in some way. The importance of the data extracted from the grades databases has been shown. 
-
-\bigskip\noindent
-One of the papers is very similar to our task in almost every way.~\cite{7} 
-They look at students in the electrical engineering program. 
-They classified a successful student as having done all his 1 year courses in 3 years. 
-This is more or less accurate but there are outliers of course. 
-They run some tests on 3 datasets, one with university data only, one with pre-university data only and one combination of both. 
-Only one is relevant to us, the dataset containing university grades only, since we will not have access to earlier data. 
-They then ran different decision tree algorithms on the data with 10 fold cross validation. 
-The only university data used here was grades and number of tries in 74 different courses. 
-With only the highest grades for the 37 available courses and how many attempts were taken pr course.
-The algorithms had an accuracy between 75 and 80\% on dropout which is very promising for us.
-
-\bigskip\noindent
-Some other, often more statistical papers talk about the importance of social data. 
-This can be in the form of data from student conversations with counselors.~\cite{11} 
-It is mentioned that the results of the case study presented in~\cite{2} indicate that Bayesian networks and neural networks are consistently outperformed by decision tree algorithms on relatively small educational datasets.
-
-\bigskip\noindent
-A data mining tool has been developed for Moodle(Moodle is a Learning Management System similar to its-learning).~\cite{12} 
-They use this mining tool to compare different data mining techniques when classifying students based on their Moodle usage. 
-This might be interesting but not many lecturers or students use its-learning efficiently. 
-
-\bigskip\noindent
-An interesting paper writes about identifying cellular phone failures and has some positive and negative things to say about some different methods.~\cite{13} 
-They state that the task is not to predict any failure but to identify possible causes that resulted in failures. 
-This might be applied to students as well. They talk about class association rules.
 
 \bigskip\noindent
 Weka is the main tool used, easy to integrate and has all the operations we will ever need.
