@@ -1,1 +1,68 @@
 \section{Problems and decisions}
+\subsection{Data preprocessing}
+Anonymizing data in a collection of data is very important when dealing with sensitive data. 
+Especially if it is for data that is going to be published. 
+A lot of times even if you remove name, id and so on there might be a certain combination of attributes that yield an induviduals identity.
+An approach called \textit{k-anonymization} which maintains the classification structure is proposed, 
+which basically makes it so that at least $k$ instances contains every combination of linked attributes. 
+A top-down approach to refine the data maximizing the trade-off between information and anonymity is presented.~\cite{14}
+
+\bigskip\noindent
+We might need to discretize our data.
+We can put grades into buckets, for example \textless C, C and \textgreater C into buckets called FAIL, PASS and GOOD.~\cite{12}
+
+\bigskip\noindent
+Reducing the number of attributes, in our case the number of courses is also important for understanding and space in the database.
+It has been shown that not only can classification properties of the data be preserved, but the accuracy can increase for certain algorithms as well~\cite{9}.
+This is also important because students can take different courses so some of these attributes may not be very relevant. 
+In the worst case it might even cause false results or conclusions in the classification process.
+
+\bigskip\noindent
+One of the biggest issues in many papers is that the dataset is not balanced. 
+Data is imbalanced when one class is represented by a significantly larger amount of instances than another~\cite{10}. 
+An imbalanced boolean dataset might look like this: class 1 is represented by 10 instances and class 0 is represented by 200 instances. 
+Learning a classifier from such datasets poses a problem. 
+A class that is poorly represented will yield bad accuracy for this class in the classifier, 
+even though the accuracy for the dataset as a whole might be high. 
+This is an important issue in our discussion as our dataset is imbalanced and the poorly represented class is the most important one, 
+we want to find students which will fail.
+
+\bigskip\noindent
+As mentioned the accuracy might be high overall but not for the spesiffic classes we want.
+A better measure for classifiers built on imbalanced datasets is the geometric mean. 
+This is usually used in these circumstances~\cite{12}. 
+
+\bigskip\noindent
+Balancing out the dataset can be done in multiple ways. 
+Random over-sampling copies random instances of an underrepresented class until the classes are represented by an equal amount of instances~\cite{12}. 
+Synthetic Minority Over-sampling Technique(SMOTE) introduces new minority instances synthetically from the nearest neighbour of equal class~\cite{9}. 
+Cost-sensitive classification lets you put weights on the classes so the classifier is built to maximize the accuracy based on these weights~\cite{9}. 
+We can specify that fail students are 5 times as important to classify correctly then pass students. 
+When changing the dataset for classification it is important to test on the original dataset if you are testing on and building from the same dataset.
+
+\bigskip\noindent
+The task of mining on imbalanced datasets is further explained in~\cite{10}.
+
+\bigskip\noindent
+They also discuss existing data mining tools for imbalanced datasets in~\cite{8}.
+
+\bigskip\noindent
+All these papers have different datasets and focuses on results but none of them take all the concerns stated in the other into account. 
+Some might discretize attribute values but not take into account the imbalanced datasets and visa versa.
+
+\subsection{Educational Decision Support System}
+An educational decision support system has been proposed~\cite{5} to optimize effort, time and money for both educators and students. 
+This focuses on finding the students that will not be able to finish their studies and who should be given a second chance. 
+The DDS focuses on making reasonable decisions in student management. 
+They want to pinpoint poor study performance, they manage a warning list of who will be forced to stop their study. 
+Which students that don't have the necessary knowledge to make it in the next semester. 
+Students may get one extra change semester to get back in the game. 
+If the wrong students are given a new chance time, money and effort will be lost. 
+With over 1348 undergrad students they got a 97\% student classification accuracy.
+
+\bigskip\noindent
+A second paper also discusses the problem of making correct academic decisions.~\cite{6} 
+Different ways of analyzing performance data is discussed and PADSS is developed, a software package. 
+Need to evaluate students in some way. The importance of the data extracted from the grades databases has been shown. 
+
+\subsection{Visualization of data}
