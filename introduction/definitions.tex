@@ -1,3 +1,28 @@
 \section{Definitions}
 \subsection{Dropout}
+Dropout is defined as a student who starts university studies but for some reason does not finish his degree. 
+Dropout can be caused by any number of reasons such as health problems, personal reasons, family and other work taking up too much time.
+It is therefore hard to define when a student has given up. 
+He or she might for example go back to school when they have resolved the family issues.
+In our case specific case we define student dropout as a student who does not finish his computer science studies.
+If a student switches studies to for example electrical engineering he is still considered as a dropout student.
+This is mainly because the data we have been able to look at until now only contains data about students computer science.
+We do still need a way to classify the student as a dropout or not for our training data.
+One approach taken by ~\cite{7} is to classify students able to finish their first year courses in 3 years as successful,
+everyone else is considered unsuccessful.
+In the future someone might have to manually mark each student in the training data as successful or not,
+but this cannot be decided at this time.
+
 \subsection{Student Data}
+Student data is defined as all the data we or the paper being discussed have available on our students.
+This varies a lot in different cases.
+Some studies in dropout prediction only use university grades and number of attempts on these courses.
+Others have extensive numbers on different tests,
+like study efficiency scores and other social experiments they have run on the students. 
+In our case we have student grades for all courses,
+number of tries on these courses,
+personal information like name, sex and age.
+However we do not have any data except the obvious data stored in any database.
+For example we do not have grades from high school and students take no kind of study tests when they start at NTNU.
+There is neither any data from it's learning which is the learning management system NTNU uses. 
+
