@@ -1,2 +1,25 @@
 \subsection{Association analysis}
+	The technique of association analysis consists of discovering interesting relationships between variables
+	in a database~\cite{Piateski:1991:assocrules,tan:2006:datamining,Agrawal:1993:assocrules}.
+	In order to proficiently describe the task of association analysis we borrow the notation from Tan et.al~\cite{tan:2006:datamining}.
+
+	\bigskip\noindent
+	The problem definition, as per Tan et.al, is defined by; 
+	the binary attributes $I = i_1, i_2, \ldots, i_d$, 
+	transactions $T = t_1, t_2,\ldots, t_N$, where each transaction	is represented as a binary vector $t$, with $t[k]$ representing the state of $I_k$ in $t$, and the support count $\sigma (X) = |{t_i|X\subseteq t_i, t_i \in T}|$
+	An association rule is thusly defined as $X \Rightarrow Y$, where $X$ and $Y$ are disjoint itemsets.
+	
+	\bigskip\noindent
+	From the definition above there are several useful properties of each rule, most known is perhaps \textit{confidence} and \textit{support}
+	\begin{figure}[H]
+		\begin{align}
+			support(X\Rightarrow Y) &= \frac{\sigma (X \cup Y)}{N}\nonumber\\
+			confidence(X\Rightarrow Y) &= \frac{\sigma (X \cup Y)}{\sigma (X)}\nonumber\\
+		\end{align}
+	\end{figure}
+	where $support$ is a measurement of the proportion of transactions in the dataset which contain the itemset. Thus a low support value for any given rule indicates that the given rule may simply be a result of coincidence. $confidence$ yields an estimate for $P(Y|X)$ given the all the transactions.
+	
+	\bigskip\noindent
+	One should take care when analysis these results as not not fall into the pits of the \textit{post hoc, ergo propter hoc\footnote{After this, therefore, because of this}}}-fallacy\cite{posthoc}. Whereby mistaking correlation for causality.
+	
 	
