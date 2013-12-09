@@ -1,2 +1,26 @@
 \subsection{Cluster analysis}
-Cluster analysis
+Cluster analysis is the process of finding clusters of closely related objects, such that objects within the same cluster are more similar to each other than to those in other clusters. 
+The notion of a cluster is however not clearly defined, and it was noted by Estivill-Castro that "`clustering is in the eye of the beholder"'~\cite{estivill2002so}.
+
+\bigskip\noindent
+Because of the lack of a clear well-defined definition of clusters and clustering there exists a vast amount of clustering algorithms. 
+Many of which work in completely different ways, and find completely different clusters. 
+Clustering does however retain some properties which can be of help in order to categorize them. 
+
+\begin{description}
+	\item[Hierarchical vs partitional:] Hierarchical clustering (Algorithm~\ref{alg:agglomerative}) allows for a cluster to have subcluster, thus the nested cluster and subcluster form a tree structure. Members of a cluster is defined as the union of its children. Partitional clustering does not allow subclusters. 
+	\item[Exclusive vs overlapping vs fuzzy:] Exclusive(hard) clustering states that each object may only be assigned to one cluster. Overlapping clustering allows for object to be assigned to multiple clusters, each with equal importance. Fuzzy clustering is an extension of overlapping clustering, but enforces weighting of importance with regards to parent clusters. Thus overlapping clustering may be seens as a relaxation of fuzzy clustering, where every parent cluster has equal importance.
+	\item[Complete vs partial:] Complete clustering assigns every object to a cluster, whereas the partial clustering does not. Partial clustering thus allows for noise, outliers, ect to remain unassigned.
+\end{description}
+
+\bigskip\noindent
+In addition to the properties mentioned above, it is possible to 
+differentiate between the algorithms by what they consider a useful cluster(cluster model). 
+
+\begin{description}
+	\item[Well-Separated:] Idealized case. But is only useful when data contain natural clusters that have space between them.
+	\item[Prototype-Based:] Each object in a cluster is closer to its prototype, then to any other prototype. This is also known as a \textit{centroid model} or \textit{center-based}. One known algorithm that falls within this description is the \textbf{K-means} algorithm(Algorithm~\ref{alg:kmeans}.
+	\item[Graph-Based:] The cluster is defined as a connected component from a graph. Connectivity between object are often given by a threshold to the distance between them in the euclidean space. One example of this is the contiguity-based-clusters, where every object is closer then a certain threshold to one or more object in its cluster. Cliques(fully connected) or highly connected components are also possible cluster models withing the graph-based clusters. 
+	\item[Density-Based:] A cluster is dense region of object surrounded by a low density region. Known algorithms that falls within this description are \textbf{DBSCAN}~\cite{Ester96adensity-based}(Algorithm~\ref{alg:dbscan}) and \textbf{OPTICS}~\cite{Ankerst99optics:ordering}.
+\end{description}
+
