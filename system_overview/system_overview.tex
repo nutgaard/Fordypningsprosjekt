@@ -3,15 +3,29 @@
 Steps:\\*
 \\*
 Extract data\\*
+We must extract the data from the FS system. We do not still know how this is done, but in some cases they can create an excel document with the needed information.
+\\*
 Preprocess data\\*
+In order to get the data from the excel documents into the data warehouse we need to preprocess it first. This can be done manually or automatic if you know the format.
+\\*
 Insert data into datawarehouse\\*
+We need to put this data into a data warehouse. We have made a proposed model for how this could look.
+\\*
 Preprocess data again?\\*
+Depending on what kind of analysis you are gonna run, or if you are only going to visualize it you might need to preprocess the data from the datawarehouse again.
+We suggest using java and calling the functions from the Weka library, and from here you can also get the data from the data warehouse easily.
 \\*
 Preview data in nice ways for analysts\\*
+Visualization of data.
+\\*
 Run different classification algorithms on data\\*
+Using Weka run the algorithms and methods described.
 \\*
 Train a conversational cased based reasoning system?\\*
-
+For this you will need to train an expert system.
+You might want to use the data to better estimate which questions you should ask a student.
+This will be a long process.
+\\*
 
 
 \input{system_overview/problems_and_decisions/problems_and_decisions}
