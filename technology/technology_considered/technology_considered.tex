@@ -1,9 +1,21 @@
-\section{Technology considered}
-There are numerous free data mining tools we can use. Some examples are RapidMiner, RapidAnalytics, Weka, PSPP, KNIME, Orange, Apache Mahout, jHepWork and Rattle.
-\subsection{Weka}
+%\section{Technology considered}
+There are numerous free data mining tools we can use. Some examples are RapidMiner, RapidAnalytics, Weka, PSPP, KNIME, Orange, Apache Mahout, jHepWork, SPSS and Rattle.
+Most of these provide a full analytic framework, but are limiting in the way data is loaded, processed and the possibility of extending the framework. 
+Weka and Apache Mahout represents the exception to this. Both of which are open-source and free frameworks written in java. 
+Thus enabling the flexibility needed to implement and tailor the behaviour of the framework to fit every need.
+Because of this we will only consider these two framework in the text below.
+
+\section{Weka}
 The Waikato Environment for Knowledge Analysis was created to grant everyone access to state-of-the-art machine learning techniques in a unified environment~\cite{Hall:2009:WDM:1656274.1656278}. 
 The workbench provides all kinds of machine learning algorithms, but we are most interested in the ones on classification. 
 It is written in Java and it is free, available under the GNU General Public License. 
 Although Weka comes with a powerful visualization tool, you can also access the library from your own Java code.
+
+\bigskip\noindent
+The possibility of using Weka as a java library was one of the main attributes we were looking for when discussing frameworks.
+Since Weka can be used as a library it opens up the possibility of seamlessly integrating Weka into a system.
+
+\section{Apache Mahout}
+
 
 

@@ -1,23 +1,57 @@
-\section{Overview of system}
+\section{The process}
 \subsection{Extract}
-We must extract the data from the FS system. We do not still know how this is done, but in some cases they can create an excel document with the needed information.
-You should also think about extracting data from It's learning.
+We must extract the data from the FS system(initially this will be the only source of data). We do not still know how this can be done, but have seen examples of student data being extracted through CSV files. 
+Since the structure of the data and the accessability is still unknown it is impossible to explain any details around this process.
+Though the process may simply be viewed as loading the data from a given resource into memory, and thus preparing it for the transformation process.
+
+\bigskip\noindent
+In order to achieve a higher accuracy we should also investigate 
+the possibility of extracting data from It's learning to augment the FS data.
 
 \subsection{Transform}
-In order to get the data from the excel documents into the data warehouse we need to preprocess it first. This can be done manually or automatic if you know the format.
-We need to anonymize the data by removing obvious fields such as name, address and so on.
-The sex of a person might be of high relevance, but we can probably not use this either.
-K-anonymization will also be helpfull.
+In order to get the data persisted in the data warehouse we need to transform the data.
+The transformation process can in most cases be done automatically given a set of assumptions and rules.
+These assumptions and rules may, as an example, describe what defines a student dropout. 
+
+\bigskip\noindent
+A second step of the transformation phase is anonymization. 
+This is normally not part of the standard process, but due to the sensitive nature of our data this is a necessary step.
+We need to anonymize the data by removing obvious fields such as name, address, student id and so forth. 
+Student can however still be identified by their grades, hence removing unique entries from the data set may be an option.
+K-anonymization or common clustering techiques may help us achieve this goal while maintaining the classification structure and accuracy.
+
 \subsection{Load}
-	\image{UML/examCentricDataModel.png}{\columnwidth}{The general structure of an exam centric data model}{fig:examCentricDataModel}
-Student data is defined here as any data we can get from the FS system. 
-This system contains all the information on every student as NTNU.
-There are grades, number of tries at an exam, reason for failing at an exam, 
-We need to put this data into a data warehouse. We have made a proposed model for how this could look.
+The transformed data from the previous phase is persisted into the datawarehouse. 
+In this specific case this data may include courses, grades, exams, number of tries for each course, 
+and any reason a student may have for not completing a course or failing an exam.
+
+\bigskip\noindent
+We propose an exam centric data model, where exam entries are treated as the \textit{fact table}. 
+The reason behind choosing an exam centric model instead of a student centric model comes from the
+need to keep the dimensions of each table at a fixed size. Something that would not be possible 
+with the student centric model due variations in courses and number of tries at each course.
+\image{UML/examCentricDataModel.png}{\columnwidth}{The general structure of an exam centric data model}{fig:examCentricDataModel}
+
+The proposed data model still yields the same flexibility as a student centric model would. 
+But may see some performance penalties due to the extra \textit{table joins} that are needed to consolidate the data.
+This performance decrease can however be mitigated by the use of \textit{materialized view}.
+For example a view over number of tries each student has on each of his passed courses.
+
 \subsection{Prepare}
-Depending on what kind of analysis you are gonna run, or if you are only going to visualize it you might need to preprocess the data from the datawarehouse again.
-We suggest using java and calling the functions from the Weka library, and from here you can also get the data from the data warehouse easily.
-\subsection{Classify/Analyze}
+Although a lot of data juggeling is done durig the transformation phase, it does not specialize the data towards its final use. 
+The prepare phase aims to close the final gap between the persisted data structure and the optimal data structure for the classifiers.
+Depending on the classifier to be used several approaches may be of relevance, especially balancing of training data to be used.
+The balancing is there because of the skewed probability distribution of dropout given a random student attending the school.
+Thus students who complete their study will dominate the classifier and yield poor accuracy for cases where students quit.
+
+\bigskip\noindent
+Another point of attention is discretization of values. 
+This is due to the specific needs of different classifiers, where some does not handle continuous values well. 
+One attribute that may be interesting to discretize is the age of a given student, 
+since age group may be a better indicator of a students performance than the age itself. 
+Other aggregated values, as average grade, may also gain accuracy by discretization.
+
+\subsection{Analyze}
 Using Weka run the algorithms and methods described.
-\subsection{Visualize}
+\subsection{Visualize}	
 Visualization of data.
