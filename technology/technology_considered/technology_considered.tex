@@ -1,11 +1,13 @@
-%\section{Technology considered}
+\section{Tools}
+
+\subsection{Datamining tools}
 There are numerous free data mining tools we can use. Some examples are RapidMiner, RapidAnalytics, Weka, PSPP, KNIME, Orange, Apache Mahout, jHepWork, SPSS and Rattle.
 Most of these provide a full analytic framework, but are limiting in the way data is loaded, processed and the possibility of extending the framework. 
 Weka and Apache Mahout represents the exception to this. Both of which are open-source and free frameworks written in java. 
-Thus enabling the flexibility needed to implement and tailor the behaviour of the framework to fit every need.
+Thus enabling the flexibility needed to implement and tailor the behavior of the framework to fit every need.
 Because of this we will only consider these two framework in the text below.
 
-\section{Weka}
+\subsubsection{Weka}
 The Waikato Environment for Knowledge Analysis was created to grant everyone access to state-of-the-art machine learning techniques in a unified environment~\cite{Hall:2009:WDM:1656274.1656278}. 
 The workbench provides all kinds of machine learning algorithms, but we are most interested in the ones on classification. 
 It is written in Java and it is free, available under the GNU General Public License. 
@@ -15,7 +17,26 @@ Although Weka comes with a powerful visualization tool, you can also access the 
 The possibility of using Weka as a java library was one of the main attributes we were looking for when discussing frameworks.
 Since Weka can be used as a library it opens up the possibility of seamlessly integrating Weka into a system.
 
-\section{Apache Mahout}
+\subsubsection{Apache Mahout}
+Mahout is a free implementation of scalable machine learning algorithms, focusing mainly on clustering and classification.
+The most common use is in collaberation with Hadoop.
+It has the mostly the same classification and rule induction methods as Weka, but not all of them. 
+It is more scalable than Weka because it is not memory bound. 
+However in this case there is not enough data to make this a real consern. 
+
+\subsection{Datawarehouse tools}
+The concept of datawarehouseing enforces no restrictions on the choice of database framework.
+The choice of framework depend on efficiency in each spesific case and the cost of using the framework.
+This efficiency largely depends on the nature of data to be persisted.
+If the data has a tabular structure, e.g. can be represented using a spreadsheet, then relational model will suffice. 
+For more complex datastructure the relational model falls short, and the noSQL (graphDB) may excel here. 
+
+\bigskip\noindent
+Because of the structure of educational data SQL seems like an appropriate solution. 
+There exists a vast amount of different SQL implementations. 
+The choice of vendor is therefore not straight forward. 
+This project does however not need enterprise quality database, and a simple free SQL implementation will probably suffice. 
+
 
 
 
