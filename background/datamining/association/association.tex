@@ -10,14 +10,14 @@
 	An association rule is thusly defined as $X \Rightarrow Y$, where $X$ and $Y$ are disjoint itemsets.
 	
 	\bigskip\noindent
-	From the definition above there are several useful properties of each rule, most known is perhaps \textit{confidence} and \textit{support}
+	From the definition above there are several useful properties of each rule, most known is perhaps \textit{confidence} and \textit{support},
+	where $support$ is a measurement of the proportion of transactions in the dataset which contain the itemset. Thus a low support value for any given rule indicates that the given rule may simply be a result of coincidence. $confidence$ yields an estimate for $P(Y|X)$ given the all the transactions.
 	\begin{figure}[H]
 		\begin{align}
 			support(X\Rightarrow Y) &= \frac{\sigma (X \cup Y)}{N}\nonumber\\
 			confidence(X\Rightarrow Y) &= \frac{\sigma (X \cup Y)}{\sigma (X)}\nonumber\\
 		\end{align}
 	\end{figure}
-	where $support$ is a measurement of the proportion of transactions in the dataset which contain the itemset. Thus a low support value for any given rule indicates that the given rule may simply be a result of coincidence. $confidence$ yields an estimate for $P(Y|X)$ given the all the transactions.
 	
 	\bigskip\noindent
 	One should take care when analysis these results as not not fall into the pits of the \textit{post hoc, ergo propter hoc\footnote{After this, therefore, because of this}}}-fallacy\cite{posthoc}. Whereby mistaking correlation for causality.
