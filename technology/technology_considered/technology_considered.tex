@@ -25,17 +25,40 @@ It is more scalable than Weka because it is not memory bound.
 However in this case there is not enough data to make this a real consern. 
 
 \subsection{Datawarehouse tools}
+Datawarehouse tools and more specific the choice of database type consists of to major parties, SQL and noSQL. 
+Within both parties there are a vast amount of different solution. Each with its own advantages and disadvantages. 
+Though mentioned in the introduction to datawarehouses it is worth noting that datawarehouses are more of a 
+concept/organizational schema, and not a fundemental change in how data is stored. 
+
+\bigskip\noindent
 The concept of datawarehouseing enforces no restrictions on the choice of database framework.
 The choice of framework depend on efficiency in each spesific case and the cost of using the framework.
 This efficiency largely depends on the nature of data to be persisted.
 If the data has a tabular structure, e.g. can be represented using a spreadsheet, then relational model will suffice. 
-For more complex datastructure the relational model falls short, and the noSQL (graphDB) may excel here. 
+For more complex datastructure the relational model falls short, and the noSQL (graphDB) may do a better job.
 
-\bigskip\noindent
-Because of the structure of educational data SQL seems like an appropriate solution. 
-There exists a vast amount of different SQL implementations. 
-The choice of vendor is therefore not straight forward. 
-This project does however not need enterprise quality database, and a simple free SQL implementation will probably suffice. 
+\subsubsection{SQL}
+	SQL is the the facto query language for relational database management systems (RDBMS), and has been around for a long time. 
+	Because of this there also exists a many different dialects and vendor specific implementations of SQL. 
+	But it also implies that there exists a vast amount of information and support available for SQL. 
+	And any problem one should encounter will most likely have been solved.
+	
+	\bigskip\noindent
+	Given that educational data can easily be viewed a table or spreadsheet, 
+	it is fair to conclude that SQL would provide more than enough flexibility.
+	It is also the most mature of the two choices presented here, and has successfully been operational in a vast amount of application.
+	
+	
+\subsubsection{NoSQL}
+	NoSQL is used as a umbrella-term describing databases that store data in any other form than relational databases, as 
+	for example graph databases, key-value stores and document stores. 
+	If compared to SQL you will find that the NoSQL-term and popularity is a relatively new phenomenon. 
+	
+	\bigskip\noindent
+	NoSQL provides additional flexibility compared to a standard SQL solution. 
+	But given the educational data then this flexibility would not be utilized, 
+	and hence not worth the additional cost that follows it.
+
 
 
 
