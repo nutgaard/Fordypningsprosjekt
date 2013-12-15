@@ -1,13 +1,19 @@
 \subsection{Association analysis}
 	The technique of association analysis consists of discovering interesting relationships between variables
 	in a database~\cite{Piateski:1991:assocrules,tan:2006:datamining,Agrawal:1993:assocrules}.
-	In order to proficiently describe the task of association analysis we borrow the notation from Tan et.al~\cite{tan:2006:datamining}.
-
+	Again looking at a store chain as an example, the administration wants to increase optimize the placement of products throughout their stores. 
+	In this case association analysis can help by looking at what items are bought together. 
+	By looking at the association rules it would be possible to increase sales and profit by placing associated items close to each other.
+	Previous work within educational datamining has looked at how information stored at e-learning-platforms\footnote{It's learning, Moodle, etc.}
+	can be analyzed to determine student performance\cite{merceron2008interestingness}. 
+	This work can be adapted to use other data sources, and thus find other interesting relationships.  
+		
 	\bigskip\noindent
+	In order to proficiently describe the task of association analysis we borrow the notation from Tan et.al~\cite{tan:2006:datamining}.
 	The problem definition, as per Tan et.al, is defined by; 
 	the binary attributes $I = i_1, i_2, \ldots, i_d$, 
 	transactions $T = t_1, t_2,\ldots, t_N$, where each transaction	is represented as a binary vector $t$, with $t[k]$ representing the state of $I_k$ in $t$, and the support count $\sigma (X) = |{t_i|X\subseteq t_i, t_i \in T}|$
-	An association rule is thusly defined as $X \Rightarrow Y$, where $X$ and $Y$ are disjoint itemsets.
+	An association rule is thus defined as $X \Rightarrow Y$, where $X$ and $Y$ are disjoint itemsets.
 	
 	\bigskip\noindent
 	From the definition above there are several useful properties of each rule, most known is perhaps \textit{confidence} and \textit{support},
