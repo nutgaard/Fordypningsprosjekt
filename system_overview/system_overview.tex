@@ -51,6 +51,7 @@ need to keep the dimensions of each table at a fixed size. Something that would 
 with the student centric model due variations in courses and number of tries at each course.
 \image{UML/examCentricDataModel.png}{\columnwidth}{The general structure of an exam centric data model}{fig:examCentricDataModel}
 
+\noindent
 The proposed data model still yields the same flexibility as a student centric model would. 
 But may see some performance penalties due to the extra \textit{table joins} that are needed to consolidate the data.
 This performance decrease can however be mitigated by the use of \textit{materialized view}.
@@ -77,7 +78,7 @@ Another factor in choosing Weka as the framework is its built-in features for bo
 As seen in chapter~\ref{ch:related} the most efficient data mining techniques for educational data are the simple and explanatory ones,
 specifically decision trees and rule inducing algorithms.
 Artificial neural networks have also been used with varying success and should be considered.
-~\cite{2} Examined the prediction accuracy of several data-mining methods in an educational context.
+Serge Herzog's paper~\cite{2} examined the prediction accuracy of several data-mining methods in an educational context.
 It found that the level of complexity of the data used is the main factor in determining which method is better.
 On average decision trees and neural networks perform at least as good as the well-established logistic regression models in the case of student retention.
 In larger data sets, data-mining algorithms worked notably better as well as providing explanatory results. 
@@ -86,13 +87,13 @@ It is also mentioned that adding multiple hidden layers and pruning underused ne
 However there is the tradeoff between accuracy and explanatory results to consider. 
 
 \bigskip\noindent
-~\cite{7} Compares decision trees, a bayesian classifier, a logistic model, a random forest method and a rule-based learner.
+Gerben Dekker~\cite{7} compares decision trees, a bayesian classifier, a logistic model, a random forest method and a rule-based learner.
 The conclusion is that simple classifiers provide more useful results while providing accuracies between 75 and 80\%.
-Even though they have a balanced data set they did not end up with a satisfactory accuracy for  false negatives(dropout students classified as successfull). As mentioned this is the important measure for us as we wish to identify struggling students. Cost sensitive learning is used instead of balancing the data set to prefer one kind of misclassification to another and is strongly advised in addition to or instead of data balancing.  
+Even though they have a balanced data set they did not end up with a satisfactory accuracy for  false negatives(dropout students classified as successfull). As mentioned this is the important measure for us as we wish to identify students at risk of leaving the university. Cost sensitive learning is used instead of balancing the data set to prefer one kind of misclassification to another and is strongly advised in addition to or instead of data balancing.  
 
 \bigskip\noindent
 In any case Weka is the dominant software to use. 
-It is a free java library and it provides all the techniques we have discussed in this paper.
+It is a free java library and it provides all the techniques we have discussed in this paper, and can be extended without any trouble.
 It also comes with a very intuitive classification, preprocessing and data flow editor through its GUI.
 
 \section{Visualize}	
@@ -106,5 +107,5 @@ The choice is largely dependent on the number of dimensions and whether variable
 
 \bigskip\noindent
 This is helpful for understanding which attributes are most significant for student dropout. 
-Not only is it helpful but many mining techniques require user intervention at different stages and visualization is starting to be used to support the decision process~\cite{1207445}.
-Overall visual data mining looks promising and this should probably be expanded on in the future.
+Not only is it helpful, but many mining techniques require user intervention at different stages and visualization is starting to be used to support the decision process~\cite{1207445}.
+Overall visual data mining looks promising and this should be expanded on in the future.
