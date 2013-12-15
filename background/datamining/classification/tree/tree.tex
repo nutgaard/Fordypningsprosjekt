@@ -1,39 +1,41 @@
-\subsubsection{Classification and regression tree}
+\subsubsection{Classification and regression tree}\label{sec:tree}
 	Classification and regression tree (\textbf{CART}) is an umbrella term used to refer to
 	classification trees and regression trees.\cite{trees:umbrella}
 
 	\bigskip\noindent The \textbf{CART} classifiers are a simple, yet powerful, classifier based around the tree structure. 
 	They are often used within the datamining discipline in order to create a predictive model based for some preexisting data.
 	The predictive model can then be used on new never seen before data in order to predict the most probable classification or value. 
+	A big advantage of the tree structure is that it is easy to understand. 
+	And may, in addition to classification, provide useful insight as to what are the most discriminating factors when considering student dropout. 
 	
-	\bigskip\noindent Classification trees and regression trees are for all intent and purposes very similar, but some key differences are worth noteing. 
+	\bigskip\noindent Classification trees and regression trees are for all intent and purposes very similar, but some key differences are worth noting. 
 	One of these differences is in the outcome of their predictive model. 
 	Classification trees, as the name may suggest, tries to pinpoint which \textit{class} an instance may belong to. 
 	Whereas with regression trees the outcome of the model is a \textit{real number}, as the price of a certain item in a store. 
 	
 	\bigskip\noindent
 	An example of decision tree applications can be seen as trying to predict the rating(1-10) of wine. 
-	Given a dataset(Resource: \cite{mining:datasetexample}) of preexisting knowledge, which include known attributes to a set of wines and their acoompanying rating.
-	A decision tree may be constructred to generalize this knownledge in order to give a prediction of other wines. 	
+	Given a dataset(Resource: \cite{mining:datasetexample}) of preexisting knowledge, which include known attributes to a set of wines and their accompanying rating.
+	A decision tree may be constructed to generalize this knowledge in order to give a prediction of other wines. 	
 		
 	\image{images/TrivialDecisionTree.png}{0.5\columnwidth}{Example classification tree from TDT4171}{fig:decisiontree}
 	
 	\bigskip\noindent
-	One example of a widely used CART algorithm comes from Ross Quinlan, the inventor of the ID3, C4.5 and C5.0 algorithms. \cite{quinlan:id3, quinlan:c45}
-	All of whom use the notion of entropy in order to select the attribute to split for at a certain point in the tree. 
-	They all use entropy(equation~\ref{eq:entropy}) as a measurement of information gain(equation~\ref{eq:gain}) by selecting a certain attribute at a given time during the algorithm. 
+	Some common CART algorithms include ID3, C4.5 and C5.0. 
+	All of which are created by Ross Quinlan\cite{quinlan:id3, quinlan:c45}.
+	These three algorithms use the notion of entropy in order to select the attribute to split for at a certain point in the tree. 
+	The entropy(equation~\ref{eq:entropy}) is used as a measurement of information gain(equation~\ref{eq:gain}) by selecting a certain attribute at a given time during the algorithm. 
 	The higher the gain is, the better do the attribute serve as an indicator of an instances' classification. (Algorithm~\ref{alg:id3})
-	\begin{figure}[H]
+	\begin{figure}[ht]
 		\begin{align}
 			H(S) &= -\sum_{x \in X}p(x)log_2p(x)\label{eq:entropy}\\
 			IG(A) &= H(S) - \sum_{t \in T}p(t)H(t)\label{eq:gain}\\
 			\intertext{where}
 			S &: \text{The current data set}\nonumber\\
 			X &: \text{The set of classes in $S$}\nonumber\\
-			p(x) &: \text{The proportion of the numbfer of elements in class $x$ to $S$}\nonumber\\
+			p(x) &: \text{The proportion of the number of elements in class $x$ to $S$}\nonumber\\
 			H(S) &: \text{The entropy of $S$}\nonumber\\
 			T &:	 \text{The subset created from splitting $S$ by $A$}\nonumber
 		\end{align}
 		\caption{The mathematics behind entropy and information gain.}
 	\end{figure}
-	

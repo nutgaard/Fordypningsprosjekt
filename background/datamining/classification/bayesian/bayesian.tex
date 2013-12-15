@@ -2,7 +2,7 @@
 	The bayesian classifier are based probabilistic classifiers which uses Bayes theorem as a basis(Equation~\ref{eq:bayes}). 
 	Bayesian networks, often referred to as belief networks in AI, 
 	is a representation of conditional dependencies using a directed acyclic graph(Figure~\ref{fig:bayesiannetwork}).
-	This representation is choosen over full joint probability distribution table(FJPDT) due to its simplicity in designing and that it requires much less probabilistic values. 
+	This representation is chosen over full joint probability distribution table(FJPDT) due to its simplicity in designing and that it requires much less probabilistic values. 
 	
 	\begin{figure}[H]
 		\begin{align}
@@ -15,13 +15,13 @@
 	\bigskip\noindent
 	As an example, given an network of $n$ boolean variables, each with $k$ parent nodes. Using a FJPDT it would require $2^n$ probabilities, 
 	whereas a bayesian network would make due with $n*2^k$. 
-	Since $k$, in most circumstances, are very small compared to $n$ this would result in just a fraction of the probabilites.
+	Since $k$, in most circumstances, are very small compared to $n$ this would result in just a fraction of the probabilities.
 	And since every probability from the FJPDT can be calculated from a bayesian network, no data is lost. 
 	
 	\bigskip\noindent
-	The final nail in coffin for the FJPDT comes from the difficulty of estimating the probabilites. 
+	The final nail in coffin for the FJPDT comes from the difficulty of estimating the probabilities. 
 	E.g The probability $P(Y|\vec{X})$ where $\vec{X}$ may contain several attributes that do not affect the probability. 
-	This is often cumbersome and difficult is the table is to be populated by a human domain expert.
+	This is often cumbersome and difficult if the table is to be populated by a human domain expert.
 	
 	\bigskip\noindent
 	A special case of bayesian network is the \textit{naive Bayes}, which is based upon a naive independence assumption between attributes. Thus making the somewhat complicated calculations seen in bayesian network become much simpler.
