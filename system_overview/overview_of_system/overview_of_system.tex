@@ -58,6 +58,18 @@ Another factor in choosing Weka as the framework is its built-in features for bo
 As seen in chapter~\ref{ch:related} the most efficient data mining techniques for educational data are the simple and explanatory ones,
 specifically decision trees and rule inducing algorithms.
 Artificial neural networks have also been used with varying success but should be considered.
+~\cite{2} Examined the prediction accuracy of several data-mining methods in an educational context.
+It found that the level of complexity of the data used is the main factor in determining which method is better.
+On average decision trees and neural networks perform at least as good as the well-established logistic regression models in the case of student retention.
+In larger data sets, data-mining algorithms worked notably better as well as providing explanatory results. 
+Neural networks worked better than decision trees and rule induction methods in complex studies, like estimating degree completion time for new and transfer students simultaneously. 
+It is also mentioned that adding multiple hidden layers and pruning underused neurones can greatly increase accuracy. 
+However there is the tradeoff between accuracy and explanatory results to consider. 
+
+\bigskip\noindent
+~\cite{7} Compares decision trees, a bayesian classifier, a logistic model, a random forest method and a rule-based learner.
+The conclusion is that simple classifiers provide more useful results while providing accuracies between 75 and 80\%.
+Even though they have a balanced data set they did not end up with a satisfactory accuracy for  false negatives(students dropping out). As mentioned this is the important measure for us as we wish to identify struggling students. Cost sensitive learning is used instead of balancing the data set to prefer one kind of misclassification to another and is strongly advised in addition to or instead of data balancing.  
 
 \subsection{Visualize}	
 Visualization is the step of communicating the information found clearly through graphical means. 
