@@ -1,10 +1,19 @@
 \section{Datawarehouse}
 	\noindent
 	This section will provide an introductory overview over the datawarehousing discipline and common terminology within. 
-	For the non-database gurus the datawarehousing dicispline is, for all intent and purposes, an organization schema of
+	For the non-database gurus the datawarehousing discipline is, for all intent and purposes, an organization schema of
 	data created to enable and facilitate data analyses without the absolute focus on normalization\cite{oracle:dataware}.
 	%Though not the only key features that differentiate datawarehouses from ordinary databases.
 	%\cite{wiki:normalization, wiki:datawarehouse}
+	This lack of focus on normalization may yield performance advantages when compared to a more standard schema.
+	Since highly normalized databases normally would require multiple queries or excess use of the \texttt{join} operator
+	in order to consolidate the data before any analytics could be run. 
+	Another strong point of datawarehouses is that it uses a common data model for data of interest, regardless of the source. 
+	Thus making the task of creating a report or analyzing the data simpler. 
+	This project revolves around analyzing student data using datamining techniques. 
+	By backing this by the use of a datawarehouse we expect better performance, as well as simpler and more understandable queries.
+	
+	
 	
 	\bigskip\noindent
 	In the datawarehouse field you will often find buzz words describing commonly known principles from ordinary database
@@ -12,13 +21,13 @@
 	These words describe to a large extends the concepts around designing a datawarehouse. 
 	
 	\bigskip\noindent
-	Measures are exactly what the avid reader may intuitively allready know, quantitative data about a business.
+	Measures are exactly what the avid reader may intuitively already know, quantitative data about a business.
 	While dimensions can be considered to be meta-data, and works as descriptive attributes. 
-	As an example from the service business, one can consider a storechain and each stores sales. 
+	As an example from the service business, one can consider a store chain and each stores sales. 
 	In this case one could look at each sale as a fact with price as possible \textit{measure},
 	and store location as a \textit{dimension}. 
 	The difference between measures and dimensions become more apparent when considering their usage.
-	One common queryform would be to use an arithmetic function, as \texttt{average} or \texttt{sum}, over a set of
+	One common query form would be to use an arithmetic function, as \texttt{average} or \texttt{sum}, over a set of
 	\textit{measures} filtered by a value from the \textit{dimensional} set.
 	The \textit{facts table} is the combination of these two, and hence holding all the "`facts"' related to 
 	
@@ -50,7 +59,7 @@
 	\image{UML/SnowflakeSchemaConcept.png}{\columnwidth}{Snowflake schema concept}{fig:snowflakeSchemeConcept}
 	
 	\subsection{ETL workflow}
-		The typical workflow when working with datawarehouses is \textit{extract, transform, load} or ETL. 
+		The typical work flow when working with datawarehouses is \textit{extract, transform, load} or ETL. 
 		The concrete implementation found in different datawarehouses may have considerable differences between them, 
 		we will therefore not go into the implementations details at this point. But rather explain the basic concepts
 		and motivation behind each step.
