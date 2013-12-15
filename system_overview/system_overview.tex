@@ -4,11 +4,102 @@
 	The first three should be recognized from the chapter on data warehousing. 
 	Step four is an intermidiate step which falls outside the realm of datawarehousing and datamining. 
 	The motivation behind this step is to enable flexibility in the datastructure, since classifiers may need different structured data.
-	Step five is the datamining step were Weka will be used as a basis
+	Step five is the datamining step where Weka will be used as a basis
 	in order to analyse the data. 
-	The final step will revolve around the presentation of results from the analysis. 
+	The final step will revolve around the presentation of results from the analysis and other general visual data mining techniques. 
 	
 \image{images/steps.png}{\columnwidth}{Dataflow}{fig:steps}
 
 %\input{system_overview/problems_and_decisions/problems_and_decisions}
-\input{system_overview/overview_of_system/overview_of_system}
+\section{Extract}
+We must extract the data from the FS system(initially this will be the only source of data).
+In FS every exam a student has signed up for is listed.
+For each exam there is a grade and a code which explain the circumstances of the exam.
+For example a student may have 3 attempted exams in one course, two fail grades with the classifications delivered blank and did not finish enough assignments and one exam with the grade C.
+Since the database structure and accessibility is not confirmed, research on this step is limited.
+However we have seen examples of student data being extracted through CSV files. 
+This is still a necessary step and it should be seen as the process of loading the data from a given resource into memory, and thus preparing it for the transformation process.
+
+\bigskip\noindent
+In order to achieve a higher accuracy we should also investigate 
+the possibility of extracting data from It's learning, and a module within FS called \textbf{SO\footnote{Samordna opptak}} which handle student application, to augment the FS data.
+
+\section{Transform}
+In order to get the data persisted in the data warehouse we need to transform the data.
+We do still need a way to classify whether the student got a degree or dropped out for our training data.
+One approach taken by ~\cite{7} is to classify students able to finish their first year courses in 3 years as successful,
+everyone else is considered unsuccessful.
+If a method for classification such as this or other assumptions and rules can be agreed upon the process can be done automatically.
+Accuracy might be increased though if a domain expert manually classifies the training data.
+
+\bigskip\noindent
+A second step of the transformation phase is anonymization. 
+This is normally not part of the standard process, but due to the possibly sensitive nature of our data this is a necessary step.
+We need to anonymize the data by removing obvious fields such as name, address, student id and so forth. 
+Student can however still be identified by their grades, hence removing unique entries from the data set may be an option.
+K-anonymization or common clustering techniques may help us achieve this goal while maintaining the classification structure and accuracy.
+
+\section{Load}
+The transformed data from the previous phase is persisted into the datawarehouse. 
+In this specific case this data may include courses, grades, exams, number of tries for each course, 
+and any reason a student may have for not completing a course or failing an exam.
+
+\bigskip\noindent
+We propose an exam centric data model, where exam entries are treated as the \textit{fact table}. 
+The reason behind choosing an exam centric model instead of a student centric model comes from the
+need to keep the dimensions of each table at a fixed size. Something that would not be possible 
+with the student centric model due variations in courses and number of tries at each course.
+\image{UML/examCentricDataModel.png}{\columnwidth}{The general structure of an exam centric data model}{fig:examCentricDataModel}
+
+The proposed data model still yields the same flexibility as a student centric model would. 
+But may see some performance penalties due to the extra \textit{table joins} that are needed to consolidate the data.
+This performance decrease can however be mitigated by the use of \textit{materialized view}.
+For example a view over number of tries each student has on each of his passed courses.
+
+\section{Prepare}
+Although a lot of data juggling is done during the transformation phase, it does not specialize the data towards its final use. 
+The prepare phase aims to close the final gap between the persisted data structure and the optimal data structure for the classifiers.
+Depending on the classifier to be used several approaches may be of relevance, especially balancing of training data to be used.
+The balancing is there because of the skewed probability distribution of dropout given a random student attending the school.
+Thus students who complete their study will dominate the classifier and yield poor accuracy for cases where students quit.
+
+\bigskip\noindent
+Another point of attention is discretization of values. 
+This is due to the specific needs of different classifiers, where some does not handle continuous values well. 
+One attribute that may be interesting to discretize is the age of a given student, 
+since age group may be a better indicator of a students performance than the age itself. 
+Other aggregated values, as average grade, may also gain accuracy by discretization.
+
+\bigskip\noindent
+Another factor in choosing Weka as the framework is its built-in features for both of the techniques mentioned above. 
+
+\section{Analyze}
+As seen in chapter~\ref{ch:related} the most efficient data mining techniques for educational data are the simple and explanatory ones,
+specifically decision trees and rule inducing algorithms.
+Artificial neural networks have also been used with varying success but should be considered.
+~\cite{2} Examined the prediction accuracy of several data-mining methods in an educational context.
+It found that the level of complexity of the data used is the main factor in determining which method is better.
+On average decision trees and neural networks perform at least as good as the well-established logistic regression models in the case of student retention.
+In larger data sets, data-mining algorithms worked notably better as well as providing explanatory results. 
+Neural networks worked better than decision trees and rule induction methods in complex studies, like estimating degree completion time for new and transfer students simultaneously. 
+It is also mentioned that adding multiple hidden layers and pruning underused neurones can greatly increase accuracy. 
+However there is the tradeoff between accuracy and explanatory results to consider. 
+
+\bigskip\noindent
+~\cite{7} Compares decision trees, a bayesian classifier, a logistic model, a random forest method and a rule-based learner.
+The conclusion is that simple classifiers provide more useful results while providing accuracies between 75 and 80\%.
+Even though they have a balanced data set they did not end up with a satisfactory accuracy for  false negatives(students dropping out). As mentioned this is the important measure for us as we wish to identify struggling students. Cost sensitive learning is used instead of balancing the data set to prefer one kind of misclassification to another and is strongly advised in addition to or instead of data balancing.  
+
+\section{Visualize}	
+Visualization is the step of communicating the information found clearly through graphical means. 
+This is useful because humans are exceptional at extracting structures from pictures compared to computers. 
+Integration between visualization and data mining is called visual data mining.
+In this proposed system we have chosen a loose integration of visual data mining where output from the analyze step is used as input for the visualization step.
+Other possible integrations are no integration, where you only use one or full integration, where both methods are applied in parallel.
+Visualization techniques that might be interesting include histogram, pie chart, scatter plots, line graphs, icon based methods and pixel based methods.
+The choice is largely dependent on the number of dimensions and whether variables are related to each other or not.
+
+\bigskip\noindent
+This is helpful for understanding which attributes are most significant for student dropout. 
+Not only is it helpful but many mining techniques require user intervention at different stages and visualization is starting to be used to support the decision process~\cite{1207445}.
+Overall visual data mining looks promising and this should probably be expanded on in the future.
