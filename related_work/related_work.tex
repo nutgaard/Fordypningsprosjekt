@@ -15,14 +15,6 @@ It is still not clear which methods are most effective in this context, but most
 It is not yet proven, albeit we need an understandable way to represent the data found, and rule based or decision tree algorithms give us exactly this. 
 
 \bigskip\noindent
-An interesting paper writes about identifying cellular phone failures~\cite{3}.
-Their task is not to predict any failure but to identify possible causes that resulted in failures.  
-They have used a technique called Class Association Rules which only mines rules with classes on the right side of the implication. 
-Many different data mining techniques is discussed and why none of them worked in a real data situation. 
-A lot of the points they bring up here applies to our task as well.
-Class Association Rule mining is further explained in~\cite{4}.
-
-\bigskip\noindent
 A lot of papers have the same main problem as us, predicting dropout prone students~\cite{5,7,8,9,11} .
 This is an important area of research as many universities use a lot of time, 
 money and effort in educating students who will not complete their degree. 
@@ -31,6 +23,10 @@ Some of these students drop out because of external events, but some might be ab
 It is therefore important to find these students to either help them or drop them from the study. 
 
 \bigskip\noindent
+Some other, often more statistical papers talk about the importance of social data. 
+This can be in the form of data from student conversations with counselors~\cite{11}.
+
+\section{Classification}
 One of the papers has very similar goals and use the same techniques as us~\cite{7}.
 They look at students in an electrical engineering program. 
 They classified a successful student as having done all his 1 year courses in 3 years. 
@@ -43,13 +39,17 @@ With only the highest grades for the 37 available courses and how many attempts 
 The algorithms had an accuracy between 75 and 80\% on dropout, which is very promising.
 
 \bigskip\noindent
-Some other, often more statistical papers talk about the importance of social data. 
-This can be in the form of data from student conversations with counselors~\cite{11}.
-
-\bigskip\noindent
 A data mining tool has been developed for Moodle (Moodle is a Learning Management System similar to its-learning)~\cite{12}.
 They use this mining tool to compare different data mining techniques when classifying students based on their Moodle usage. 
 This might be interesting but not many lecturers or students use its-learning to its full extent. 
+
+\bigskip\noindent
+An interesting paper writes about identifying cellular phone failures~\cite{3}.
+Their task is not to predict any failure but to identify possible causes that resulted in failures.  
+They have used a technique called Class Association Rules which only mines rules with classes on the right side of the implication. 
+Many different data mining techniques is discussed and why none of them worked in a real data situation. 
+A lot of the points they bring up here applies to our task as well.
+Class Association Rule mining is further explained in~\cite{4}.
 
 \section{Data preprocessing}
 Anonymizing a collection of data is very important when dealing with sensitive data. 
