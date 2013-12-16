@@ -3,10 +3,11 @@
 	in a database~\cite{Piateski:1991:assocrules,tan:2006:datamining,Agrawal:1993:assocrules}.
 	Again looking at a store chain as an example, the administration wants to increase optimize the placement of products throughout their stores. 
 	In this case association analysis can help by looking at what items are bought together. 
-	By looking at the association rules it would be possible to increase sales and profit by placing associated items close to each other.
+	Then by looking at the association rules it would be possible to increase sales and profit by placing associated items close to each other.
 	Previous work within educational datamining has looked at how information stored at e-learning-platforms\footnote{It's learning, Moodle, etc.}
 	can be analyzed to determine student performance\cite{merceron2008interestingness}. 
-	This work can be adapted to use other data sources, and thus find other interesting relationships.  
+	This work can be adapted to use other data sources, and thus find other interesting relationships,
+	as relationships between different courses.  
 		
 	\bigskip\noindent
 	In order to proficiently describe the task of association analysis we borrow the notation from Tan et.al~\cite{tan:2006:datamining}.
@@ -17,7 +18,9 @@
 	
 	\bigskip\noindent
 	From the definition above there are several useful properties of each rule, most known is perhaps \textit{confidence} and \textit{support},
-	where $support$ is a measurement of the proportion of transactions in the dataset which contain the itemset. Thus a low support value for any given rule indicates that the given rule may simply be a result of coincidence. $confidence$ yields an estimate for $P(Y|X)$ given the all the transactions.
+	where $support$ is a measurement of the proportion of transactions in the dataset which contain the itemset. 
+	Thus a low support value for any given rule indicates that the given rule may simply be a result of coincidence. 
+	While $confidence$ yields an estimate for $P(Y|X)$ given the all the transactions.
 	\begin{figure}[H]
 		\begin{align}
 			support(X\Rightarrow Y) &= \frac{\sigma (X \cup Y)}{N}\nonumber\\
@@ -26,6 +29,6 @@
 	\end{figure}
 	
 	\bigskip\noindent
-	One should take care when analysis these results as not not fall into the pits of the \textit{post hoc, ergo propter hoc\footnote{After this, therefore, because of this}}-fallacy\cite{posthoc}. Whereby mistaking correlation for causality.
+	One should however be careful when analizing these results as to not fall into the pits of the \textit{post hoc, ergo propter hoc\footnote{After this, therefore, because of this}}-fallacy\cite{posthoc}. Whereby mistaking correlation for causality.
 	
 	
