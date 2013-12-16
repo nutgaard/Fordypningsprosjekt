@@ -37,7 +37,7 @@ A second step of the transformation phase is anonymization.
 This is normally not part of the standard process, but due to the possibly sensitive nature of our data this is a necessary step.
 We need to anonymize the data by removing obvious fields such as name, address, student id and so forth. 
 Student can however still be identified by their grades, hence removing unique entries from the data set may be an option.
-K-anonymization or common clustering techniques may help us achieve this goal while maintaining the classification structure and accuracy.
+K-anonymization, anomaly detection and common clustering techniques may help us achieve this goal while maintaining the classification structure and accuracy.
 
 \section{Load}
 The transformed data from the previous phase is persisted into the datawarehouse. 
@@ -56,6 +56,11 @@ The proposed data model still yields the same flexibility as a student centric m
 But may see some performance penalties due to the extra \textit{table joins} that are needed to consolidate the data.
 This performance decrease can however be mitigated by the use of \textit{materialized view}.
 For example a view over number of tries each student has on each of his passed courses along with the best obtained grade in the respective course.
+
+\bigskip\noindent
+We suggest the use of SQL for the database. 
+The data is not complex enough to justify a NoSQL framework.
+The choice of dialect and vendor does not imply any restrictions but we suggest using MySQL, since it is free under the GNU General Public License and will integrate nicely with a java system.
 
 \section{Prepare}
 Although a lot of data juggling is done during the transformation phase, it does not specialize the data towards its final use. 
@@ -90,6 +95,9 @@ However there is the tradeoff between accuracy and explanatory results to consid
 Gerben Dekker~\cite{7} compares decision trees, a bayesian classifier, a logistic model, a random forest method and a rule-based learner.
 The conclusion is that simple classifiers provide more useful results while providing accuracies between 75 and 80\%.
 Even though they have a balanced data set they did not end up with a satisfactory accuracy for  false negatives(dropout students classified as successfull). As mentioned this is the important measure for us as we wish to identify students at risk of leaving the university. Cost sensitive learning is used instead of balancing the data set to prefer one kind of misclassification to another and is strongly advised in addition to or instead of data balancing.  
+
+\bigskip\noindent
+If the focus is more on finding courses that make students quit or similar student behavior across courses, association analysis should be strongly considered. This technique may yield significant results regardless and should be experimented with. It provides statistical evidence of useful rules with its measures, support and confidence. In chapter~\ref{ch:relclass} a method called Class Association Rules, which only mines rules with class as the implied attribute can be used if only the courses that make students quit are of interest or performance becomes an issue.
 
 \bigskip\noindent
 In any case Weka is the dominant software to use. 
