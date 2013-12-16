@@ -18,7 +18,7 @@ For each exam there is a grade and a code which explain the circumstances of the
 For example a student may have 3 attempted exams in one course, two fail grades with the classifications delivered blank and did not finish enough assignments and one exam with the grade C.
 Since the database structure and accessibility is not confirmed, research on this step is limited.
 However we have seen examples of student data being extracted through CSV files. 
-This is still a necessary step and it should be seen as the process of loading the data from a given resource into memory, and thus preparing it for the transformation process.
+This is still a necessary step and we will assume that this data is available in the following steps. This step should be seen as the process of loading the data from a given resource into memory, and thus preparing it for the transformation process.
 
 \bigskip\noindent
 In order to achieve a higher accuracy we should also investigate 
@@ -30,7 +30,10 @@ We do still need a way to classify whether the student got a degree or dropped o
 One approach taken by ~\cite{7} is to classify students able to finish their first year courses in 3 years as successful,
 everyone else is considered unsuccessful.
 If a method for classification such as this or other assumptions and rules can be agreed upon the process can be done automatically.
-Accuracy might be increased though if a domain expert manually classifies the training data.
+The courses of a 5-year master student at NTNU are very much locked in place.
+The first 4 semesters are filled with obligatory courses for getting a degree in contradiction to a bachelor.
+This will make the choice of assumptions and rules easier and should be a concern if it is extended to bachelor studies.
+Accuracy might be increased if a domain expert manually classifies the training data.
 
 \bigskip\noindent
 A second step of the transformation phase is anonymization. 
