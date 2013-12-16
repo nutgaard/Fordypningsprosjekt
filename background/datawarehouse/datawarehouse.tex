@@ -1,6 +1,6 @@
 \section{Datawarehouse}
 	\noindent
-	This section will provide an introductory overview over the datawarehousing discipline and common terminology within. 
+	%This section will provide an introductory overview over the datawarehousing discipline and common terminology within. 
 	For the non-database gurus the datawarehousing discipline is, for all intent and purposes, an organization schema of
 	data created to enable and facilitate data analyses without the absolute focus on normalization\cite{oracle:dataware}.
 	%Though not the only key features that differentiate datawarehouses from ordinary databases.
@@ -24,12 +24,12 @@
 	Measures are exactly what the avid reader may intuitively already know, quantitative data about a business.
 	While dimensions can be considered to be meta-data, and works as descriptive attributes. 
 	As an example from the service business, one can consider a store chain and each stores sales. 
-	In this case one could look at each sale as a fact with price as possible \textit{measure},
-	and store location as a \textit{dimension}. 
+	In this case one could look at each sale as a fact with the price as possible \textit{measure},
+	and the store location as a \textit{dimension}. 
 	The difference between measures and dimensions become more apparent when considering their usage.
 	One common query form would be to use an arithmetic function, as \texttt{average} or \texttt{sum}, over a set of
 	\textit{measures} filtered by a value from the \textit{dimensional} set.
-	The \textit{facts table} is the combination of these two, and hence holding all the "`facts"' related to 
+	The \textit{facts table} is the combination of these two, and hence holding all the "`facts"'. 
 	
 	
 	\bigskip\noindent
@@ -61,8 +61,9 @@
 	\subsection{ETL workflow}
 		The typical work flow when working with datawarehouses is \textit{extract, transform, load} or ETL. 
 		The concrete implementation found in different datawarehouses may have considerable differences between them, 
-		we will therefore not go into the implementations details at this point. But rather explain the basic concepts
-		and motivation behind each step.
+		and will therefore just explain the basic concepts and motivation behind each of these steps.
+		%we will therefore not go into the implementations details at this point. But rather explain the basic concepts
+		%and motivation behind each step.
 		
 		\subsubsection{Extract}
 			The motivation behind the extraction step, and not jumping directly to data transformation, is quite simple. More often then not do datawarehouses depend on data from several diffrent sources. These sources may in many cases organize their data in different way, and even use different formats. 
