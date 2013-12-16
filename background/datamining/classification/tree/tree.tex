@@ -26,7 +26,7 @@
 	These three algorithms use the notion of entropy in order to select the attribute to split for at a certain point in the tree. 
 	The entropy(equation~\ref{eq:entropy}) is used as a measurement of information gain(equation~\ref{eq:gain}) by selecting a certain attribute at a given time during the algorithm. 
 	The higher the gain is, the better do the attribute serve as an indicator of an instances' classification. (Algorithm~\ref{alg:id3})
-	\begin{figure}[ht]
+	\begin{figure}[H]
 		\begin{align}
 			H(S) &= -\sum_{x \in X}p(x)log_2p(x)\label{eq:entropy}\\
 			IG(A) &= H(S) - \sum_{t \in T}p(t)H(t)\label{eq:gain}\\
