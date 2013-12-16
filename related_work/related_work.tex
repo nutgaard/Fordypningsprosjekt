@@ -46,9 +46,11 @@ This might be interesting but not many lecturers or students use its-learning to
 \bigskip\noindent
 An interesting paper writes about identifying cellular phone failures~\cite{3}.
 Their task is not to predict any failure but to identify possible causes that resulted in failures.  
+This is similar to our case since we try to find causes of dropout and not just classify the students.
+Decision trees provide good accuracy and explanatory results but this paper had problems with decision trees only finding enough rules to most correctly classify their data.
 They have used a technique called Class Association Rules which only mines rules with a class as the implied attribute. 
-Many different data mining techniques is discussed and why none of them worked in a real data situation. 
-A lot of the points they bring up here applies to our task as well.
+This is a subset of association rules and can greatly increase performance if there are too many attributes.
+This technique will enable us to mine all the rules with high enough confidence and support and maybe draw some interesting conclusions about attributes which may otherwise be left out.
 Class Association Rule mining is further explained in~\cite{4}.
 
 \section{Data preprocessing}
